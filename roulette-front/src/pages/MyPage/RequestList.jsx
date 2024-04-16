@@ -1,6 +1,7 @@
+import posts from "../../components/postData/postData"
 
 const RequestList = () => {
-
+  
   return (
     <div>
       내 질문 목록
