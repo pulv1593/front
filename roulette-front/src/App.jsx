@@ -15,6 +15,7 @@ import RequestList from './pages/MyPage/RequestList';
 import AnswerList from './pages/MyPage/AnswerList';
 import SaveCodeList from './pages/MyPage/SaveCodeList';
 import Myinfo from './pages/MyPage/Myinfo';
+import PostDetail from './pages/Code/PostDetail';
 
 function App () {
   return (
@@ -27,8 +28,9 @@ function App () {
           <Route path="/user" element={<Login />} />
           <Route path="/user/join" element={<SignUp />} />
           <Route path="/code" element={<BoardMain />} />
+          <Route path="/code/:postId" element={<PostDetail />}/>
           <Route path="/code/ask" element={<RequestCode />} />
-          <Route path="/css" element={<CodeIDE />} />
+          <Route path="/css/:postId" element={<CodeIDE />} />
           <Route path="/chat" element={<Chat /> } />
           <Route path="/mypage/info" element={<Myinfo />} />
           <Route path="/mypage/list" element={<RequestList />} />
