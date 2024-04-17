@@ -27,9 +27,10 @@ const CodeIDE = () => {
             </div>
             <p>{post.content}</p>
           </div>
+          {/* web ide 기능 구현 */}
           <div className='IDE-container' style={{border:"1px solid black", margin:"10px", padding:"10px", width:"800px", height:"600px"}}>
             <div className='webIDE' style={{ backgroundColor:"#d5d5d5"}}>
-              web IDE가 구현될 창
+              web IDE
             </div>
           </div>
           <button onClick={handleAnswer} style={{width:"60px", height:"40px", margin:"10px 10px", fontSize:"20px"}}> 저장 </button>
