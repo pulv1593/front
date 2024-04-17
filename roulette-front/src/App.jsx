@@ -18,10 +18,17 @@ import Myinfo from './pages/MyPage/Myinfo';
 
 function App () {
   return (
-    <div className='App'>
+    <div className='App' style={{
+      height: "auto",
+      minHeight: "100%",
+    }}>
       <Router>
         <Header />
 
+        <div className='Main' style={{
+          minHeight: "calc(100vh - 30px)",
+          width: "100%",
+        }}>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/user" element={<Login />} />
@@ -35,6 +42,7 @@ function App () {
           <Route path="/mypage/post" element={<SaveCodeList />} />
           <Route path="/mypage/code" element={<AnswerList />} />
         </Routes>
+        </div>
 
         <Footer />
       </Router>
