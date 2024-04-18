@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import posts from '../../components/postData/postData';
 
-function PostDetail() {
+function PostDetailAns() {
   const { postId } = useParams();
   const navigate = useNavigate();
   const postIdNum = parseInt(postId, 10);
@@ -25,7 +25,6 @@ function PostDetail() {
               <img src={post.image} alt="사진" />
             </div>
             <p>{post.content}</p>
-            <button> 삭제 </button>
             <button onClick={handleAnswer}> 답변 </button> 
           </div>
           <div className='answerList-container' style={{border:"1px solid black", margin:"10px", padding:"10px", width:"800px", height:"600px"}}>
@@ -37,7 +36,6 @@ function PostDetail() {
                   <p>답변자 닉네임</p>
                   <p>작성된 날짜</p>
                 </div>
-                <button style={{width:"60px", height:"40px", marginRight:"10px", fontSize:"20px"}}> 채택 </button>
               </div>
             </div>
           </div>
@@ -46,4 +44,4 @@ function PostDetail() {
   );
 }
 
-export default PostDetail;
+export default PostDetailAns;

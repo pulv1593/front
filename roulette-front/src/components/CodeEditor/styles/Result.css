@@ -1,0 +1,23 @@
+/* Result component styles */
+.result-container {
+  background-color: #282c34;
+  padding: 1rem; /* p-4 equivalent */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow equivalent */
+  margin-top: 1rem; /* mt-4 equivalent */
+  border-radius: 0.5rem; /* rounded-lg equivalent */
+}
+
+.result-heading {
+  font-size: 1.125rem; /* text-lg equivalent */
+  font-weight: 600; /* font-semibold equivalent */
+  color: white; /* text-white equivalent */
+  margin-bottom: 0.5rem; /* mb-2 equivalent */
+}
+
+.result-iframe {
+  background-color: white;
+  width: 100%; /* w-full equivalent */
+  height: 600px; /* h-60 equivalent */
+  border: 1px solid #4b5563; /* border border-gray-700 equivalent */
+  border-radius: 0.375rem; /* rounded-md equivalent */
+}
