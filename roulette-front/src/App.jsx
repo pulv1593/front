@@ -26,7 +26,7 @@ function App () {
         <Header />
 
         <div className='Main' style={{
-          minHeight: "calc(100vh - 30px)",
+          minHeight: "calc(100vh - 50px)",
           width: "100%",
         }}>
         <Routes>
