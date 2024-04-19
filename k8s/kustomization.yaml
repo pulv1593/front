@@ -3,7 +3,7 @@ resources:
   - deployment.yaml
   - service.yaml
   - ingress.yaml
-  - mariadb.yaml
+  - mysql.yaml
 configMapGenerator:
   - name: init-db
     files:
