@@ -1,10 +1,12 @@
-FROM node:20
+FROM node:16
 
-WORKDIR /usr/src/app
+WORKDIR /front/roulette-front
 
-COPY ./ ./
+COPY package.json ./
 
 RUN npm i
+
+COPY ./ ./
 
 EXPOSE 3000
 
