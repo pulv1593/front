@@ -15,6 +15,8 @@ import RequestList from './pages/MyPage/RequestList';
 import AnswerList from './pages/MyPage/AnswerList';
 import SaveCodeList from './pages/MyPage/SaveCodeList';
 import Myinfo from './pages/MyPage/Myinfo';
+import PostDetailAns from './pages/Code/PostDetailAns';
+import PostDetailReq from './pages/Code/PostDetailReq';
 
 function App () {
   return (
@@ -34,8 +36,10 @@ function App () {
           <Route path="/user" element={<Login />} />
           <Route path="/user/join" element={<SignUp />} />
           <Route path="/code" element={<BoardMain />} />
+          <Route path="/code/answer/:postId" element={<PostDetailAns />}/>
+          <Route path="/code/:postId" element={<PostDetailReq />}/>
           <Route path="/code/ask" element={<RequestCode />} />
-          <Route path="/css" element={<CodeIDE />} />
+          <Route path="/css/:postId" element={<CodeIDE />} />
           <Route path="/chat" element={<Chat /> } />
           <Route path="/mypage/info" element={<Myinfo />} />
           <Route path="/mypage/list" element={<RequestList />} />
