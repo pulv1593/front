@@ -27,11 +27,11 @@ const Home = () => {
           fontSize: "40px",
           border: "0",
           backgroundColor: "transparent",
-      }}>Login
+      }}>START        
         <img src={Arrow} style={{
           width: "5%",
           height: "5%",
-          paddingLeft: "10px"
+          paddingLeft: "20px"
         }}/>
       </button>
     </div>
