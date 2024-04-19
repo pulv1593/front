@@ -1,15 +1,12 @@
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { useRef } from "react"
+import './Header.css'
+import Dropdown from './Dropdown'
+// image import
 import Logo from '../../assets/roulette.png'
 import User from '../../assets/user.png'
 import Mail from '../../assets/mail.png'
-import Edit from '../../assets/editing.png'
-import Answer from '../../assets/a.png'
-import Question from '../../assets/q.png'
-import Save from '../../assets/save.png'
-import Logout from '../../assets/power-off.png'
 import useDetectClose from '../../hooks/useOutsideClick'
-import './Header.css'
 
 const Header = () => {
   const dropDownRef = useRef();
@@ -36,7 +33,7 @@ const Header = () => {
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
-    }}>
+     }}>
       <button onClick={linkHome} 
         style={{
           height: "80%",
@@ -70,6 +67,16 @@ const Header = () => {
           <img src={Mail} style={{
             width: "30px",
           }}/>
+          {/* 알람 개수 받아오기 */}
+          <span className="noticeCount" style={{
+            position: "absolute",
+            top: "5px",
+            right: "75px",
+            padding: "5px 10px",
+            borderRadius: "50%",
+            background: "red",
+            color: "white",
+          }}>2</span>
         </button>
         <div className="dropdown" 
           ref={dropDownRef}
@@ -93,33 +100,7 @@ const Header = () => {
             }}/>
           </button>
           {isOpen && (
-            <div className="dropdownList active" 
-              style={{
-                width: "150px",
-                height: "238px",
-                position: "absolute",
-                right: "-20px",
-                top: "65px",
-                backgroundColor: "lightpink",
-                boxShadow: "0px 8px 16px 0px rgba(0,,0,0,0.2)",
-                
-              }}>
-              <Link to="/mypage/info" className="link borderBottom" onClick={dropdownClicked}>
-                <img src={Edit} />마이페이지
-              </Link>
-              <Link to="/mypage/list" className="link borderBottom" onClick={dropdownClicked}>
-                <img src={Question}/>내 질문 보기
-              </Link>
-              <Link to="/mypage/post" className="link borderBottom" onClick={dropdownClicked}>
-                <img src={Save}/>저장한 코드
-              </Link>
-              <Link to="/mypage/code" className="link borderBottom" onClick={dropdownClicked}>
-                <img src={Answer}/>답변한 코드
-              </Link>
-              <Link to="/" className="link" onClick={dropdownClicked}>
-                <img src={Logout}/>로그아웃
-              </Link>
-            </div>
+            <Dropdown closeDrop={[isOpen, setIsOpen]}/>
           )}
         </div>
       </div>
