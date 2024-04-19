@@ -1,0 +1,25 @@
+
+
+.Cancel {
+  font-size: 15px;
+  padding-left: 80%;
+  color: #ffd6d6;
+  border: 0px;
+  background-color: transparent;
+}
+
+.Cancel:hover {
+  color: red;
+}
+
+.edit_btn {
+  font-size: 15px;
+  margin-top: 15px;
+  margin-left: 85%;
+  border: 0px;
+  background-color: transparent;
+}
+
+.edit_btn:hover {
+  background-color: lightgray;
+}
