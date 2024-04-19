@@ -46,31 +46,26 @@ function CodeQuestion () {
   };
 
   return (
-    <div className="Request-container" style={{display:"flex", flexDirection:"column", padding:"10px" ,border: "1px solid black", borderRadius:"3px"}}>
+    <div className="flex flex-col p-2 border border-black rounded">
       <input 
-        type="text" 
-        value={title} 
-        onChange={handleTitleChange} 
+        type="text"
+        value={title}
+        onChange={handleTitleChange}
         placeholder="제목"
-        style={{margin:"5px 0px", width:"50%"}}
+        className="my-1 w-1/2"
       />
       <textarea
-        value={content} 
-        onChange={handleInputChange} 
+        value={content}
+        onChange={handleInputChange}
         placeholder="내용"
-        style={{
-          margin:"auto",
-          height:"200px", // 고정 높이
-          width: "100%", // 너비를 부모 컨테이너의 100%로 설정
-          resize: "none", // 크기 조절 비활성화
-          overflowY: "auto"}} // 내용이 높이를 초과하면 스크롤바 표시
+        className="mx-auto my-1 h-50 w-full resize-none overflow-y-auto"
       />
       <input 
-        type="file" 
-        onChange={handleImageChange} 
-        style={{margin:"5px 0px"}}
+        type="file"
+        onChange={handleImageChange}
+        className="my-1"
       />
-      <button onClick={handlePostSubmit}>작성하기</button>
+      <button onClick={handlePostSubmit} className="mt-2">작성하기</button>
     </div>
   );
 }

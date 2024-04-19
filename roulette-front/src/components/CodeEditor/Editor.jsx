@@ -1,10 +1,9 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback } from 'react';
 import { javascript } from "@codemirror/lang-javascript";
 import { html } from "@codemirror/lang-html";
 import { css } from "@codemirror/lang-css";
 import Result from './Result';
 import CodeMirror from "@uiw/react-codemirror";
-import './styles/Editor.css'; // Import the CSS file
 
 function Editor() {
   const [html_edit, setHtml_Edit] = useState('');
@@ -33,50 +32,46 @@ function Editor() {
     setSrcCode(srcCodeUpdated);
   }, [html_edit, css_edit, js_edit]);
 
-  console.log(srcCode);
-
   return (
-    <div>
-      <div className="editor-container">
-        <div className="editor-grid">
-          <div className="editor">
-            <h2 className="editor-title">HTML</h2>
-            <CodeMirror
-              className="editor-text"
-              value={html_edit}
-              height="342px"
-              theme="dark"
-              extensions={[html(true)]}
-              onChange={onChangeHtml}
-            />
-          </div>
-          <div className="editor">
-            <h2 className="editor-title">CSS</h2>
-            <CodeMirror
-              className="editor-text"
-              value={css_edit}
-              height="342px"
-              theme="dark"
-              extensions={[css(true)]}
-              onChange={onChangeCss}
-            />
-          </div>
-          <div className="editor">
-            <h2 className="editor-title">JavaScript</h2>
-            <CodeMirror
-              className="editor-text"
-              value={js_edit}
-              height="342px"
-              theme="dark"
-              extensions={[javascript(true)]}
-              onChange={onChangeJavaScript}
-            />
-          </div>
+    <div className="p-2">
+      <div className="grid grid-cols-1 gap-2 lg:grid-cols-3">
+        <div className="bg-gray-800 p-4 rounded-lg shadow-lg mb-2">
+          <h2 className="text-lg font-semibold text-white mb-2">HTML</h2>
+          <CodeMirror
+            className="text-xl border-gray-700 border"
+            value={html_edit}
+            height="342px"
+            theme="dark"
+            extensions={[html(true)]}
+            onChange={onChangeHtml}
+          />
         </div>
-        <Result srcCode={srcCode} />
+        <div className="bg-gray-800 p-4 rounded-lg shadow-lg mb-2">
+          <h2 className="text-lg font-semibold text-white mb-2">CSS</h2>
+          <CodeMirror
+            className="text-xl border-gray-700 border"
+            value={css_edit}
+            height="342px"
+            theme="dark"
+            extensions={[css(true)]}
+            onChange={onChangeCss}
+          />
+        </div>
+        <div className="bg-gray-800 p-4 rounded-lg shadow-lg mb-2">
+          <h2 className="text-lg font-semibold text-white mb-2">JavaScript</h2>
+          <CodeMirror
+            className="text-xl border-gray-700 border"
+            value={js_edit}
+            height="342px"
+            theme="dark"
+            extensions={[javascript(true)]}
+            onChange={onChangeJavaScript}
+          />
+        </div>
       </div>
+      <Result srcCode={srcCode} />
     </div>
-  )
+  );
 }
 
 export default Editor;

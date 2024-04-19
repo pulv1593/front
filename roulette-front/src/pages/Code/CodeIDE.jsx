@@ -26,11 +26,11 @@ const CodeIDE = () => {
   // post가 존재하는 경우, 해당 post의 상세 정보를 표시
   return (
     <div>
-      <div style={{display:"flex", flexDirection:"row", justifyContent:"space-between"}}>
-        <h1>{post.title}</h1>
-        <div style={{alignItems:"center"}}>
-          <button onClick={openImageInNewTab} style={{width:"110px", height:"40px", margin:"10px 10px", fontSize:"20px"}}>이미지 확대</button>
-          <button onClick={handleAnswer} style={{width:"100px", height:"40px", margin:"10px 10px", fontSize:"20px"}}> 저장 </button>
+      <div className="flex flex-row justify-between items-center ml-3 mt-3">
+        <h1 className="text-3xl font-bold ">{post.title}</h1>
+        <div className="flex items-center">
+          <button onClick={openImageInNewTab} className="w-28 h-10 mx-2 text-xl border boeder-black">이미지 확대</button>
+          <button onClick={handleAnswer} className="w-25 h-10 mx-2 text-xl border boeder-black">저장</button>
         </div>
       </div>
       <Editor />

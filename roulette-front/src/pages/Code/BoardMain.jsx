@@ -22,17 +22,14 @@ const BoardMain = () => {
   }, []); // 의존성 배열이 비어있으므로 컴포넌트가 처음 마운트될 때만 실행됩니다.
 
   return (
-    <div>
-      <h1>게시판</h1>
-      <div className="BoardMain-container" style={{width: '100%', borderTop: '1px solid #ffe6e6' }}>
+    <div className="mt-3">
+      <h1 className="mb-3 ml-3 text-3xl font-bold">게시판</h1>
+      <div className=" w-full border-t border-custom-light-pink" >
         <div className="questionBtn-container" style={{display: "flex", flexDirection:"row-reverse"}}>
-          <Link to="/code/ask" style={{
-            backgroundColor:"#ff9e9e",
-            margin:"5px",
-            padding:"5px 10px", 
-            border:"1px solid black",
-            color: "black", 
-            textDecoration: "none"}}> 질문하기 </Link>
+          <Link to="/code/ask" 
+            className=" bg-custom-light-pink m-3 px-2.5 py-1.25 border border-black text-black no-underline"
+            > 질문하기 
+          </Link>
         </div>
         <div className="PostList-container">
           {/* 게시글 목록을 PostLayout 컴포넌트에 전달 */}
