@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 body {
   margin: 0;
 }
@@ -13,3 +14,4 @@ ul {
 a {
   text-decoration: none;
 }
+
