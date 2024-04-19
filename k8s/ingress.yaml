@@ -6,14 +6,14 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-body-size: "64m"
   labels:
     app.kubernetes.io/managed-by: kargocd
-  name: frontend
+  name: krampoline
   namespace: default
 spec:
   rules:
     - http:
         paths:
-          - path: /
-            pathType: Prefix
-            backend:
+          - backend:
+              path: /
+              pathType: Prefix
               serviceName: frontend
               servicePort: 3000
