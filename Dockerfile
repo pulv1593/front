@@ -1,8 +1,8 @@
-FROM node:16
+FROM node:20.12.2
 
-WORKDIR /front/roulette-front
+WORKDIR /usr/src/app
 
-COPY package.json ./
+COPY /front/roulette-front/package.json 
 
 RUN npm i
 
@@ -10,4 +10,4 @@ COPY ./ ./
 
 EXPOSE 3000
 
-CMD ["node", "server.js"]
+CMD ["npm", "dev"]
