@@ -1,18 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: krampoline
+  name: frontend
 spec:
   selector:
     matchLabels:
-      app: krampoline
+      app: frontend
   template:
     metadata:
       labels:
-        app: krampoline
+        app: frontend
     spec:
       containers:
-        - name: krampoline
-          # 여러분의 image 주소를 입력해주세요.
-          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_77d9e3e54e00
+        - name: frontend
+          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_87b7d2669418
           imagePullPolicy: Always

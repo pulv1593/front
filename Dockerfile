@@ -1,11 +1,13 @@
-FROM node:16
+FROM node:20.12.2
 
 WORKDIR /usr/src/app
 
-COPY ./ ./
+COPY package.json package-lock.json ./
 
 RUN npm i
 
+COPY . .
+
 EXPOSE 3000
 
-CMD ["node", "server.js"]
+CMD ["npm", "run", "dev"]

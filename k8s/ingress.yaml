@@ -12,8 +12,8 @@ spec:
   rules:
     - http:
         paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              serviceName: krampoline
+          - backend:
+              path: /
+              pathType: Prefix
+              serviceName: frontend
               servicePort: 3000
