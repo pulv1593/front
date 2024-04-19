@@ -4,12 +4,11 @@ spec:
   template:
     metadata:
       labels:
-        app: backend
+        app: frontend
     spec:
       containers:
-        - name: backend
-          # 여러분의 image 주소를 입력해주세요.
-          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_37857ee41a88
+        - name: frontend
+          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_c41a8b19357a
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
