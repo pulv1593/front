@@ -7,7 +7,7 @@ const Login = () => {
   const link = `https://kauth.kakao.com/oauth/authorize?scope=account_email&client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=code&prompt=login`;
 	
   const loginHandler = () => {
-    window.location.href = link;
+    // window.location.href = link;
 		console.log(redirect_uri,client_id);
   };
 	
