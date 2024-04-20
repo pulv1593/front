@@ -5,7 +5,7 @@ const Login = () => {
   const link = REDIRECT_URI+`/kakaologin`;
 
   const loginHandler = () => {
-    window.location.href = link;
+    //window.location.href = link;
 		console.log(link, CLIENT_ID, REDIRECT_URI);
   };
 	
