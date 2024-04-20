@@ -2,7 +2,7 @@
 const Login = () => {
   const CLIENT_ID = import.meta.env.VITE_KAKAO_CLIENT_ID;
   const REDIRECT_URI = import.meta.env.VITE_KAKAO_REDIRECT_URI;
-  const link = `https://kauth.kakao.com/oauth/authorize?scope=account_email&client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=code&prompt=login`;
+  const link = REDIRECT_URI+`/kakaologin`;
 
   const loginHandler = () => {
     window.location.href = link;
