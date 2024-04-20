@@ -1,7 +1,8 @@
-	const Login = () => {
+
+const Login = () => {
   const CLIENT_ID = process.env.REACT_APP_KAKAO_CLIENT_ID;
   const REDIRECT_URI = process.env.REACT_APP_KAKAO_REDIRECT_URI;
-  const link = `https://kauth.kakao.com/oauth/authorize?scope=account_email&client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=code&prompt=login`;;
+  const link = `https://kauth.kakao.com/oauth/authorize?scope=account_email&client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=code&prompt=login`;
 
   const loginHandler = () => {
     window.location.href = link;
@@ -36,5 +37,4 @@
   );
 };
 
-
-export default Login
+export default Login;
