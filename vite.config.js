@@ -7,10 +7,5 @@ export default defineConfig({
   server:{
     port: 3000,
     host: true,
-  },
-	define: {
-		'process.env': {
-			VITE_KAKAO_REDIRECT_URI: JSON.stringify(import.meta.env.VITE_KAKAO_REDIRECT_URI)
-		}
-	}
+  }
 })
