@@ -1,6 +1,6 @@
 
 const Login = () => {
-  const CLIENT_ID = ;
+  const CLIENT_ID = import.meta.env.VITE_KAKAO_CLIENT_ID;
   const REDIRECT_URI = import.meta.env.VITE_KAKAO_REDIRECT_URI;
   const link = REDIRECT_URI+`/kakaologin`;
 
