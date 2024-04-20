@@ -1,7 +1,7 @@
 	const Login = () => {
   const REST_API_KEY = ;
   const REDIRECT_URI = process.env.REACT_APP_REDIRECT_URI;
-  const link = `https://kffa9824affd9a.user-app.krampoline.com/kakaologin`;
+  const link = REDIRECT_URI+`/kakaologin`;
 
   const loginHandler = () => {
     window.location.href = link;
