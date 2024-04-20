@@ -1,7 +1,7 @@
-const Login = () => {
-  const REST_API_KEY = '백엔드한테 달라하자1';
-  const REDIRECT_URI = '백엔드한테 달라하자2';
-  const link = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code`;
+	const Login = () => {
+  const REST_API_KEY = ;
+  const REDIRECT_URI = process.env.REACT_APP_REDIRECT_URI;
+  const link = `https://kffa9824affd9a.user-app.krampoline.com/kakaologin`;
 
   const loginHandler = () => {
     window.location.href = link;
