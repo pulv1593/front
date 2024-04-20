@@ -2,13 +2,11 @@
 const Login = () => {
   const CLIENT_ID = import.meta.env.VITE_KAKAO_CLIENT_ID;
   const REDIRECT_URI = import.meta.env.VITE_KAKAO_REDIRECT_URI;
-	const client_id = JSON.stringify({CLIENT_ID});
-	const redirect_uri = JSON.stringify({REDIRECT_URI});
-  const link = `https://kauth.kakao.com/oauth/authorize?scope=account_email&client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=code&prompt=login`;
+  const link = `https://kauth.kakao.com/oauth/authorize?scope=account_email&client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=code&prompt=login`;
 	
   const loginHandler = () => {
     // window.location.href = link;
-		console.log(redirect_uri,client_id);
+		console.log(link);
   };
 	
   return (
