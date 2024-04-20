@@ -2,7 +2,7 @@
 const Login = () => {
   const CLIENT_ID = process.env.REACT_APP_KAKAO_CLIENT_ID;
   const REDIRECT_URI = process.env.REACT_APP_KAKAO_REDIRECT_URI;
-  const link = REDIRECT_URI+`/kakaologin`;
+  const link = `${REDIRECT_URI}/kakaologin`;
 	
   const loginHandler = () => {
     //window.location.href = link;
