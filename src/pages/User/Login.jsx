@@ -8,6 +8,7 @@ const Login = () => {
 	
   const loginHandler = () => {
     window.location.href = link;
+		console.log(redirect_uri,client_id);
   };
 	
   return (
