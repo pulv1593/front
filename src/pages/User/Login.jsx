@@ -1,11 +1,11 @@
 
 const Login = () => {
-  const CLIENT_ID = import.meta.env.VITE_KAKAO_CLIENT_ID;
-  const REDIRECT_URI = import.meta.env.VITE_KAKAO_REDIRECT_URI;
-  const link = `${REDIRECT_URI}/kakaologin`;
+  const client_id = import.meta.env.VITE_KAKAO_CLIENT_ID;
+  const redirect_url = import.meta.env.VITE_KAKAO_REDIRECT_URI;
+  const link = `/kakaologin`;
 	
   const loginHandler = () => {
-    //window.location.href = link;
+    window.location.href = link;
 		console.log(link);
   };
 	
