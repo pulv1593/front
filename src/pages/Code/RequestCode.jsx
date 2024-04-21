@@ -7,7 +7,7 @@ function CodeQuestion () {
   const [title, setTitle] = useState('');
   const [contents, setContents] = useState('');
   const [image, setImage] = useState('');
-	const [member_id, setMember_id]
+	// const [member_id, setMember_id];
   const navigate = useNavigate();
 
   const handleTitleChange = (e) => {
