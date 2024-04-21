@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_87b7d2669418
+          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_55a2b7ca05f9
           imagePullPolicy: Always
           env:
             - name: VITE_KAKAO_CLIENT_ID
