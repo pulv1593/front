@@ -11,7 +11,7 @@ const LoginHandeler = () => {
 			try {
 				const res = await axios.post(`${import.meta.env.VITE_REDIRECT_URI}/auth/kakao/token`,{
 					code	
-				}),
+				});
 				localStorage.setItem("access_token", res.data.access_token);
 				console.log(res);
 				navigate("/code");
