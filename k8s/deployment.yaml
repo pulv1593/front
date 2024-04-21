@@ -26,3 +26,8 @@ spec:
                 secretKeyRef:
                   name: secrets
                   key: redirect-uri
+            - name: VITE_REDIRECT_URI
+              valueFrom:
+                secretKeyRef:
+                  name: secrets
+                  key: redirect-uri-front
