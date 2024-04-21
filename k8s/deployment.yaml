@@ -19,10 +19,10 @@ spec:
             - name: VITE_KAKAO_CLIENT_ID
               valueFrom:
                 secretKeyRef:
-                  name: secret-key
+                  name: secrets
                   key: client-id
             - name: VITE_KAKAO_REDIRECT_URI
               valueFrom:
                 secretKeyRef:
-                  name: secret-uri
+                  name: secrets
                   key: redirect-uri
