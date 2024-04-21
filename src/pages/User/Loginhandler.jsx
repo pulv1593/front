@@ -28,12 +28,13 @@ const LoginHandeler = (props) => {
 				navigate("/code");
 			} catch (error){
 				console.error("Error occured", error);
+				console.log(code);
 				// 로그인 실패 시 홈으로
 				navigate("/");
 			}
 		};
 		kakaoLogin();
-	}, [code, navigate]);
+	}, [props.history]);
 	
   return (
     <div className="LoginHandeler">
