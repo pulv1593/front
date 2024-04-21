@@ -15,7 +15,7 @@ spec:
         - name: frontend
           image: krmp-d2hub-idock.9rum.cc/dev-test/repo_87b7d2669418
           imagePullPolicy: Always
-					env:
+          env:
             - name: VITE_KAKAO_CLIENT_ID
               valueFrom:
                 secretKeyRef:
