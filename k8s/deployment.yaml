@@ -30,4 +30,4 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: secrets
-                  key: redirect-uri-front
+                  key: redirect-uri-back

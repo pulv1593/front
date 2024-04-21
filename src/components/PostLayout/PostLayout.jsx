@@ -3,7 +3,7 @@ import "./PostLayout.css";
 import posts from "../postData/postData";
 
 function PostLayout() {
-  
+	
   if (!posts || posts.length === 0) {
     return <div className="post-container">게시글이 없습니다.</div>;
   }
