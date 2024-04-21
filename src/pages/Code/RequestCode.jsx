@@ -1,11 +1,13 @@
-import { useState } from "react"
+import { useState } from "react";
+import axios from "axios";
 import posts from "../../components/postData/postData";
 import { useNavigate } from "react-router-dom";
 
 function CodeQuestion () {
   const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
+  const [contents, setContents] = useState('');
   const [image, setImage] = useState('');
+	// const [member_id, setMember_id];
   const navigate = useNavigate();
 
   const handleTitleChange = (e) => {
@@ -13,8 +15,12 @@ function CodeQuestion () {
   };
 
   const handleInputChange = (e) => {
-    setContent(e.target.value);
+    setContents(e.target.value);
   };
+	
+	// const handleMemberIdChange = (e) => {
+	// setMember_id(e.target.value);
+	// };
 
   // 이미지는 base64 형식으로 받아야 함.
   const handleImageChange = (e) => {
@@ -27,22 +33,27 @@ function CodeQuestion () {
       reader.readAsDataURL(e.target.files[0]);
     }
   };
+	
+//작성하기 버튼 클릭시 post 정보를 db에 전달.(member_id 처리는 어떻게 할건지?)
+  const handlePostSubmit = async () => {
+    const formData = new FormData();
+    formData.append('image', image);
+    formData.append('title', title);
+    formData.append('contents', contents);
+		// formData.append('member_id', member_id)
+    try {
+      const response = await axios.post('http://your-backend-url/posts', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          'Authorization': `Bearer ${yourAccessToken}`,  // 토큰 사용 예시
+        },
+      });
 
-  const handlePostSubmit = () => {
-    // 새로운 게시글 객체 생성
-    const newPost = {
-      id: posts.length + 1, // 새로운 게시글의 id 설정
-      title: title,
-      content: content,
-      image: image,
-      // 추가 필요한 다른 속성들도 여기에 포함시킬 수 있습니다.
-    };
-
-    // 새로운 게시글을 기존의 게시글 목록에 추가
-    posts.push(newPost);
-    console.log('새로운 게시글이 추가되었습니다:', newPost);
-
-    navigate("/code")
+      console.log('Server response:', response);
+      navigate("/code");
+    } catch (error) {
+      console.error('Error posting the data', error);
+    }
   };
 
   return (
@@ -55,7 +66,7 @@ function CodeQuestion () {
         style={{margin:"5px 0px", width:"50%"}}
       />
       <textarea
-        value={content} 
+        value={contents} 
         onChange={handleInputChange} 
         placeholder="내용"
         style={{
