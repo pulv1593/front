@@ -19,7 +19,7 @@ import PostDetailAns from './pages/Code/PostDetailAns';
 import PostDetailReq from './pages/Code/PostDetailReq';
 
 function App () {
-	const REDIRECT_URI = import.meta.env.VITE.REDIRECT_URI;
+	const redirectUriPath = `${import.meta.env.VITE_REDIRECT_URI}/login/oauth2/callback/kakao`;
   return (
     <div className='App' style={{
       height: "auto",
@@ -35,7 +35,7 @@ function App () {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/user" element={<Login />} />
-					<Route path="${REDIRECT_URI}/login/oauth2/callback/kakao" element={<Loginhandler />} />
+					<Route path={redirectUriPath} element={<Loginhandler />} />
           <Route path="/code" element={<BoardMain />} />
           <Route path="/code/answer/:postId" element={<PostDetailAns />}/>
           <Route path="/code/:postId" element={<PostDetailReq />}/>

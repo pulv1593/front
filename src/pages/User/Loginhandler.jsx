@@ -10,11 +10,11 @@ const LoginHandeler = (props) => {
     const kakaoLogin = async () => {
 		try {
 			const res = await axios({
-        		method: "GET",
-        		url: `${import.meta.env.VITE_REDIRECT_URL}/?code=${code}`,
-						console.log(code);
-        		headers: {
-					 "Content-Type": "application/json;charset=utf-8",
+					method: "GET",
+					url: `${import.meta.env.VITE_REDIRECT_URL}/?code=${code}`,
+					console.log(code);
+					headers: {
+				 "Content-Type": "application/json;charset=utf-8",
 				},
 			});
 			//백에서 완료후 우리사이트 전용 토큰 넘겨주는게 성공했다면
