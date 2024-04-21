@@ -20,6 +20,8 @@ const LoginHandeler = () => {
 				navigate("/code");
 			} catch (error){
 				console.error("Error occured", error);
+				console.log(code);
+				console.log(redirect_uri);
 				navigate("/");
 				}
 			};
