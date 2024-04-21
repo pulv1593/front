@@ -21,13 +21,23 @@ spec:
                 secretKeyRef:
                   name: secrets
                   key: client-id
-            - name: VITE_KAKAO_REDIRECT_URI
+            - name: VITE_FRONT_REDIRECT_URI
               valueFrom:
                 secretKeyRef:
                   name: secrets
-                  key: redirect-uri
-            - name: VITE_REDIRECT_URI
+                  key: front-redirect-uri
+            - name: VITE_FRONT_KAKAO_REDIRECT_URI
               valueFrom:
                 secretKeyRef:
                   name: secrets
-                  key: redirect-uri-back
+                  key: front-kakao-redirect-uri
+            - name: VITE_BACK_REDIRECT_URI
+              valueFrom:
+                secretKeyRef:
+                  name: secrets
+                  key: back-redirect-uri
+            - name: VITE_BACK_REDIRECT_URI
+              valueFrom:
+                secretKeyRef:
+                  name: secrets
+                  key: back-kakao-redirect-uri

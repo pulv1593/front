@@ -1,7 +1,8 @@
 
 const Login = () => {
   const CLIENT_ID = import.meta.env.VITE_KAKAO_CLIENT_ID;
-  const REDIRECT_URI = import.meta.env.VITE_KAKAO_REDIRECT_URI;
+  // const REDIRECT_URI = import.meta.env.VITE_KAKAO_REDIRECT_URI;	
+  const REDIRECT_URI = 'https://k56733b335962a.user-app.krampoline.com/login/oauth2/callback/kakao';
   const link = `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}`;
 
   const loginHandler = () => {
