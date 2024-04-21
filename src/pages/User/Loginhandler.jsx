@@ -11,27 +11,30 @@ const LoginHandeler = (props) => {
 		try {
 			const res = await axios({
         		method: "GET",
-        		url: `${import.meta.env.VITE_KAKAO_REDIRECT_URL}/?code=${code}`,
+        		url: `${import.meta.env.VITE_REDIRECT_URL}/?code=${code}`,
+						console.log(code);
         		headers: {
 					 "Content-Type": "application/json;charset=utf-8",
 				},
 			});
 			//백에서 완료후 우리사이트 전용 토큰 넘겨주는게 성공했다면
-        	console.log(res);
+        console.log(res);
         	//localStorage에 저장할 정보
-        	localStorage.setItem("name", res.data.account.kakaoName);
-			localStorage.setItem("email", res.data.account.kakaoMail);
-			localStorage.setItem("uaer_id", res.data.user_id);
-			localStorage.setItem("access_token", res.data.access_token);
+				// localStorage.setItem("name", res.data.account.profile_nickname);
+				// localStorage.setItem("email", res.data.account.account_email);
+				// localStorage.setItem("profile_img", res.data.account.profile_img);
+				// localStorage.setItem("uaer_id", res.data.user_id);
+				// localStorage.setItem("access_token", res.data.access_token);
 			//로그인 성공시 코드게시판으로 link
-			navigate("/code");
-		} catch (error){
-			console.error("Error occured", error);
-			navigate("/");
-		}
-	};
-	kakaoLogin();
-}, [code, navigate]);
+				navigate("/code");
+			} catch (error){
+				console.error("Error occured", error);
+				// 로그인 실패 시 홈으로
+				navigate("/");
+			}
+		};
+		kakaoLogin();
+	}, [code, navigate]);
 	
   return (
     <div className="LoginHandeler">
