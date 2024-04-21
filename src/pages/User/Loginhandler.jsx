@@ -30,7 +30,7 @@ const LoginHandeler = (props) => {
 				console.error("Error occured", error);
 				console.log("ㅇㅇㅇ"+code);
 				// 로그인 실패 시 홈으로
-				navigate("/");
+				// navigate("/");
 			}
 		};
 		kakaoLogin();
