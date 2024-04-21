@@ -28,7 +28,7 @@ const LoginHandeler = (props) => {
 				navigate("/code");
 			} catch (error){
 				console.error("Error occured", error);
-				console.log(code);
+				console.log("ㅇㅇㅇ"+code);
 				// 로그인 실패 시 홈으로
 				navigate("/");
 			}
