@@ -12,7 +12,6 @@ const LoginHandeler = (props) => {
 			const res = await axios({
 					method: "GET",
 					url: `${import.meta.env.VITE_REDIRECT_URL}/?code=${code}`,
-					console.log(code),
 					headers: {
 						"Content-Type": "application/json;charset=utf-8",
 					},
