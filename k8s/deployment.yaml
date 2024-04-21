@@ -36,7 +36,7 @@ spec:
                 secretKeyRef:
                   name: secrets
                   key: back-redirect-uri
-            - name: VITE_BACK_REDIRECT_URI
+            - name: VITE_BACK_KAKAO_REDIRECT_URI
               valueFrom:
                 secretKeyRef:
                   name: secrets
