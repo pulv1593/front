@@ -36,6 +36,7 @@ const Header = () => {
       justifyContent: "space-between",
       alignItems: "center",
      }}>
+		 <div>
 		  {!token && (
 		  	<button onClick={linkHome} 
 				style={{
@@ -51,9 +52,10 @@ const Header = () => {
 				}}/>
 			  </button>
 		  )};
-		  
-		  {token && (
-			  <button onClick={linkHome} 
+		</div>
+		 <div>
+		 {token && (
+			 <button onClick={linkHome} 
 				style={{
 				  height: "80%",
 				  width: "70px",
@@ -65,8 +67,8 @@ const Header = () => {
 				  height: "100%",
 				  width: "100%",
 				}}/>
-			  </button>
-			  <div className="button" 
+			 </button>
+			 <div className="button" 
 				style={{
 				  height: "100%",
 				  padding: "20px",
@@ -121,10 +123,10 @@ const Header = () => {
 				  {isOpen && (
 					<Dropdown closeDrop={[isOpen, setIsOpen]}/>
 				  )}
-					</div>
-		  		</div>
+				</div>
+		  	</div>
 		 )}
-      
+		</div>
     </div>
   )
 }
