@@ -12,15 +12,11 @@ const LoginHandeler = () => {
 	const code = new URL(window.location.href).searchParams.get("code");
 	
 // 인가코드 백으로 보내는 작업 하는곳
-	const [isLoggingIn, setIsLoggingIn] = useState(false);
+	const [prevCode, setPrevCode] = useState(null);
 	
 	useEffect(() => {
     const kakaoLogin = async () => {
 		// 이미 로그인 진행 시 중복 요청 방지
-		if(isLoggingIn) return;
-		
-		setIsLoggingIn(true);
-		
 		try {
 			// 	https://k9bceeba41403a.user-app.krampoline.com/reqlogin/{인가코드}
 			const res = await axios.get(`${back}/reqlogin/${encodeURIComponent(code)}`);
@@ -32,14 +28,13 @@ const LoginHandeler = () => {
 			console.error("Error occured", error);
 			console.log(code);
 			navigate("/");
-			} finally {
-				setIsLoggingIn(false);
-			}
+			} 
 		};
-		if(code) {
+		if(code && code!=prevCode) {
 			kakaoLogin();
+			setPrevCode(code);
 		}
-	}, [code, isLoggingIn, navigate]);
+	}, [code, navigate, prevCode]);
 	
   return (
     <div className="LoginHandeler">
