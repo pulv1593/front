@@ -18,11 +18,11 @@ const LoginHandeler = () => {
 			const res = await axios.post(`${back}`, {
 				access_code: code
 			});
-			localStorage.setItem("access_token", res.access_token);
-			localStorage.setItem("member_id", res.member_id);
+			localStorage.setItem("access_token", res.data.access_token);
+			localStorage.setItem("member_id", res.data.member_id);
 // 			카카오 이름, 메일 가져오기
-			localStorage.setItem("name", res.name);
-			localStorage.setItem("email", res.email);
+			// localStorage.setItem("name", res.name);
+			// localStorage.setItem("email", res.email);
 			console.log(res);
 			console.log("성공" + code);
 			navigate("/code");
