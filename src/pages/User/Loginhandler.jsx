@@ -1,4 +1,4 @@
-  import { useEffect } from "react";
+import { useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -13,7 +13,7 @@ const LoginHandeler = () => {
 	
 // 인가코드 백으로 보내는 작업 하는곳
 	useEffect(() => {
-    const kakaoLogin = async () => 
+    const kakaoLogin = async () => {
 		try {
 			const res = await axios.post(`${back}`, {
 				access_code: code
@@ -28,9 +28,8 @@ const LoginHandeler = () => {
 			console.log(code);
 			navigate("/");
 			} 
-		};
-		if(code) {
-			kakaoLogin();
+	}; if(code) {
+		kakaoLogin();
 		}
 	}, [code, navigate]);
 	
