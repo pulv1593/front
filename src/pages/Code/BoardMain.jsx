@@ -10,6 +10,7 @@ const BoardMain = () => {
   const [hasMore, setHasMore] = useState(true);
   const observer = useRef();
   const lastPostElementRef = useRef(null);
+	const REDIRECT_URI = import.meta.env.VITE_BACK_REDIRECT_URI;
 
 // 	fetchPosts 함수 작성(게시글 정보 불러오기)
 	const fetchPosts = async () => {

@@ -6,6 +6,7 @@ import Footer  from './components/Footer/Footer';
 
 import Home from './pages/Home/Home';
 import Login from './pages/User/Login';
+import LoginHandler from './pages/User/Loginhandler';
 import BoardMain from './pages/Code/BoardMain';
 import RequestCode from './pages/Code/RequestCode';
 import Chat from './pages/Chat/Chat';
@@ -33,6 +34,7 @@ function App () {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/user" element={<Login />} />
+					<Route path="/login/oauth2/callback/kakao" element={<LoginHandler />} />
           <Route path="/code" element={<BoardMain />} />
           <Route path="/code/answer/:postId" element={<PostDetailAns />}/>
           <Route path="/code/:postId" element={<PostDetailReq />}/>
