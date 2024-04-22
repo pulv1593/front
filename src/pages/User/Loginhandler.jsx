@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -12,25 +12,34 @@ const LoginHandeler = () => {
 	const code = new URL(window.location.href).searchParams.get("code");
 	
 // 인가코드 백으로 보내는 작업 하는곳
+	const [isLoggingIn, setIsLoggingIn] = useState(false);
+	
 	useEffect(() => {
     const kakaoLogin = async () => {
-			try {
-				// 	https://k9bceeba41403a.user-app.krampoline.com/reqlogin/{인가코드}
-				const res = await axios.get(`${back}/reqlogin/${encodeURIComponent(code)}`);
-				localStorage.setItem("access_token", res.data.access_token);
-				console.log(res);
-				console.log("성공" + code);
-				navigate("/code");
-			} catch (error){
-				console.error("Error occured", error);
-				console.log(code);
-				navigate("/");
-				}
-			};
+		// 이미 로그인 진행 시 중복 요청 방지
+		if(isLoggingIn) return;
+		
+		setIsLoggingIn(true);
+		
+		try {
+			// 	https://k9bceeba41403a.user-app.krampoline.com/reqlogin/{인가코드}
+			const res = await axios.get(`${back}/reqlogin/${encodeURIComponent(code)}`);
+			localStorage.setItem("access_token", res.data.access_token);
+			console.log(res);
+			console.log("성공" + code);
+			navigate("/code");
+		} catch (error){
+			console.error("Error occured", error);
+			console.log(code);
+			navigate("/");
+			} finally {
+				setIsLoggingIn(false);
+			}
+		};
 		if(code) {
 			kakaoLogin();
 		}
-	}, [code, navigate]);
+	}, [code, isLoggingIn, navigate]);
 	
   return (
     <div className="LoginHandeler">
