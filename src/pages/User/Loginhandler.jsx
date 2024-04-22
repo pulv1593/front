@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 
 const LoginHandeler = () => {
 	const navigate = useNavigate();
-	const back = 'https//k9bceeba41403a.user-app.krampoline.com';
+	const back = 'https://k9bceeba41403a.user-app.krampoline.com';
 	// const back = import.meta.env.VITE_BACK_REDIRECT_URI;
-	const back2 = 'https//k9bceeba41403a.user-app.krampoline.com/login/oauth2/code/kakao/auth/kakao/token'
+	const back2 = 'https://k9bceeba41403a.user-app.krampoline.com/login/oauth2/code/kakao/auth/kakao/token'
 	// const redirect_uri = 'https://k56733b335962a.user-app.krampoline.com/login/oauth2/callback/kakao';
 	const redirect_uri = import.meta.env.VITE_FRONT_KAKAO_REDIRECT_URI;
 	const code = new URL(window.location.href).searchParams.get("code");
