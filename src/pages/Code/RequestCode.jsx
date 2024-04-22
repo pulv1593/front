@@ -17,22 +17,17 @@ function CodeQuestion () {
   const handleInputChange = (e) => {
     setContents(e.target.value);
   };
-	
-	// const handleMemberIdChange = (e) => {
-	// setMember_id(e.target.value);
-	// };
 
-  // 이미지는 base64 형식으로 받아야 함.
-  const handleImageChange = (e) => {
-    if (e.target.files[0]) {
-      // Create a URL for the file
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        setImage(e.target.result);
-      };
-      reader.readAsDataURL(e.target.files[0]);
-    }
-  };
+// 이미지 파일형식으로 image 변수에 저장.
+// 	e를 image에 할당해서 보내주기.(jpeg 파일)
+	const handleImageChange = (e) => {
+		if(e.target.files[0]) {
+			const file = e.target.files[0];
+			setImage(file);
+		}
+		console.log(image);
+	};
+
 	
 //작성하기 버튼 클릭시 post 정보를 db에 전달.(member_id 처리는 어떻게 할건지?)
   const handlePostSubmit = async () => {
