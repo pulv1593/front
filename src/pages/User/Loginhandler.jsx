@@ -16,7 +16,7 @@ const LoginHandeler = () => {
     const kakaoLogin = async () => {
 			try {
 				// 	https://k9bceeba41403a.user-app.krampoline.com/reqlogin/{인가코드}
-				const res = await axios.get(`https://k9bceeba41403a.user-app.krampoline.com/reqlogin/${code}`);
+				const res = await axios.get(`${back}/reqlogin/${encodeURIComponent(code)}`);
 				localStorage.setItem("access_token", res.data.access_token);
 				console.log(res);
 				console.log("성공" + code);
