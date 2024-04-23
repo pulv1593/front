@@ -14,6 +14,7 @@ const Header = () => {
 	
 // 	로컬에서 token 가져옴
 	const token = localStorage.getItem('access_token');
+	console.log(token);
 
   const dropdownClicked = () => {
     setIsOpen(!isOpen);

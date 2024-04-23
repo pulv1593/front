@@ -20,12 +20,12 @@ const LoginHandeler = () => {
 			});
 			localStorage.setItem("access_token", res.data.access_token);
 			localStorage.setItem("member_id", res.data.member_id);
-// 			카카오 이름, 메일 가져오기
-			// localStorage.setItem("name", res.name);
-			// localStorage.setItem("email", res.email);
 			console.log(res);
 			console.log("성공" + code);
-			navigate("/code");
+			
+			setTimeout(() => {
+				navigate("/code");
+			}, 100);
 		} catch (error){
 			console.error("Error occured", error);
 			console.log(code);
