@@ -1,4 +1,5 @@
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route, Switch} from 'react-router-dom';
+import PrivateRouter from './components/Router/PrivateRouter';
 
 // component 가져오기
 import Header from './components/Header/Header';
@@ -20,6 +21,7 @@ import PostDetailReq from './pages/Code/PostDetailReq';
 
 function App () {
 	const defaultCurrentPage = 0;
+	const isAuthenticated = true;
 	
   return (
     <div className='App' style={{
@@ -34,19 +36,22 @@ function App () {
           width: "100%",
         }}>
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/user" element={<Login />} />
-					<Route path="/login/oauth2/callback/kakao" element={<LoginHandler />} />
-          <Route path='/post/list/:currentPage' element={<BoardMain defaultCurrentPage={defaultCurrentPage} />} />
-          <Route path="/post/preview/:codeId" element={<PostCodePreview />}/>
-          <Route path="/post/:postId" element={<PostDetailReq />}/>
-          <Route path="/post/ask" element={<RequestCode />} />
-          <Route path="/code" element={<CodeIDE />} />
-          <Route path="/chat" element={<Chat /> } />
-          <Route path="/mypage/info" element={<Myinfo />} />
-          <Route path="/mypage/list" element={<RequestList />} />
-          <Route path="/mypage/post" element={<SaveCodeList />} />
-          <Route path="/mypage/code" element={<AnswerList />} />
+			<Switch>
+			  <Route exact path="/" element={<Home />} />
+			  <Route path="/user" element={<Login />} />
+				<Route path="/login/oauth2/callback/kakao" element={<LoginHandler />} />
+				<PrivateRouter exact path="" element={<RequestList />}  isAuthenticated={isAuthenticated} />
+			  <Route path='/post/list/:currentPage' element={<BoardMain defaultCurrentPage={defaultCurrentPage} />} />
+			  <Route path="/post/preview/:codeId" element={<PostCodePreview />}/>
+			  <Route path="/post/:postId" element={<PostDetailReq />}/>
+			  <Route path="/post/ask" element={<RequestCode />} />
+			  <Route path="/code" element={<CodeIDE />} />
+			  <Route path="/chat/start" element={<Chat /> } />
+			  <Route path="/mypage/member" element={<Myinfo />} />
+			  <!-- <Route path="/mypage/list" element={<RequestList />} /> -->
+			  <Route path="/mypage/post" element={<SaveCodeList />} />
+			  <Route path="/mypage/code" element={<AnswerList />} />
+			</Switch>
         </Routes>
         </div>
 
