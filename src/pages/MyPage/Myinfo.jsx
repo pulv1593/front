@@ -76,10 +76,7 @@ const Myinfo = () => {
 			width: "90%",
 			height: "50%",
 		  }}/>
-		  <!-- {/* 본인이면 수정/탈퇴 버튼 보여주고, 본인이 아니면 안보여줌 */} -->
-			<!-- {token && (
-				<button className="edit_btn">저장</button>
-			)} -->
+			<button className="edit_btn">저장</button>
 		</div>
 	  </div>
 	  <div style={{
