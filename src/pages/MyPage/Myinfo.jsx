@@ -1,4 +1,5 @@
-import { useNavigate, useState, useEffect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "React";
 import kakao from '../../assets/KakaoTalk_logo.png';
 import './Myinfo.css';
 import axios from 'axios';
