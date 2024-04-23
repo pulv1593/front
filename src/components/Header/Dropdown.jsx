@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
+import axios from 'axios';
 // image import
 import Edit from '../../assets/editing.png'
 import Answer from '../../assets/a.png'
@@ -16,16 +17,16 @@ const Dropdown = ({closeDrop}) => {
   };
 	
 	const kakaoLogout = async () => {
-		const token = localStorage.getItem('access_token');
+		const access_token = localStorage.getItem('access_token');
 		try {
-			if (token) {
+			if (access_token) {
 				const res = await axios.get(`${back_logout}`, null, {
 				  headers: {
-					Authorization: `Bearer ${token}`
+					Authorization: `Bearer ${access_token}`
 				  }
 				});
-			};
 			console.log('로그아웃 성공: ', res);
+			};
 			localStorage.clear();
 			navigate('/');
 		} 
@@ -65,7 +66,7 @@ const Dropdown = ({closeDrop}) => {
       <Link to="/mypage/code" className="link borderBottom" onClick={dropdownClicked}>
         <img src={Answer}/>답변한 코드
       </Link>
-      <Link to="/" className="link" onClick={logoutClicked}>
+      <Link className="link" onClick={logoutClicked}>
         <img src={Logout}/>로그아웃
       </Link>
     </div>
