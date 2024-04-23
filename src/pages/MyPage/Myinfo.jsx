@@ -17,24 +17,24 @@ const Myinfo = () => {
 	
 	const token = localStorage.getItem('access_token');
 	
-	useEffect(() => {
-		const userInfo = async () => {
-			try {
-				const res = await.axios.get('백엔드 api url', {
-					handers: {
-						Authorization: `Bearer ${token}`
-					}
-				});
-				setUserInfo(res.data);
-			} catch (error) {
-				console.error('사용자 정보를 불러오는 중 오류가 발생했습니다.', error);
-				navigate('/');
-			}
-		};
-		if(token){
-			userInfo();
-		}
-	}, []);
+	// useEffect(() => {
+	// 	const userInfo = async () => {
+	// 		try {
+	// 			const res = await.axios.get('백엔드 api url', {
+	// 				handers: {
+	// 					Authorization: `Bearer ${token}`
+	// 				}
+	// 			});
+	// 			setUserInfo(res.data);
+	// 		} catch (error) {
+	// 			console.error('사용자 정보를 불러오는 중 오류가 발생했습니다.', error);
+	// 			navigate('/');
+	// 		}
+	// 	};
+	// 	if(token){
+	// 		userInfo();
+	// 	}
+	// }, []);
 
 	return (
 	<div style={{
@@ -68,7 +68,7 @@ const Myinfo = () => {
 		  <p style={{
 			paddingTop: "10px",
 		  }}>
-			  <span>{userInfo.name}</span>
+			  <!-- <span>{userInfo.name}</span> -->
 			님</p>
 		  <p style={{
 			paddingTop: "10px",
@@ -77,7 +77,7 @@ const Myinfo = () => {
 			width: "90%",
 			height: "50%",
 		  }}/>
-		  {/* 본인이면 수정/탈퇴 버튼 보여주고, 본인이 아니면 안보여줌 */}
+		  <!-- {/* 본인이면 수정/탈퇴 버튼 보여주고, 본인이 아니면 안보여줌 */} -->
 			{token && (
 				<button className="edit_btn">저장</button>
 			)}
@@ -102,8 +102,8 @@ const Myinfo = () => {
 		  <p value={} style={{
 			paddingLeft: "25%",
 		  }}>
-		  {/* 소셜 이메일 */}
-		  <span>{userInfo.email}</span>
+		  <!-- {/* 소셜 이메일 */}
+		  <span>{userInfo.email}</span> -->
 		  </p>
 		</div>
 	  </div>
