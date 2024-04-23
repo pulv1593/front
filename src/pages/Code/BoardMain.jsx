@@ -3,8 +3,8 @@ import PostLayout from "../../components/PostLayout/PostLayout";
 import axios from "axios";
 import { useEffect, useState, useParams } from "react";
 
-const BoardMain = ({ defaulCurrentPageCurrentPage }) => {
-	const parmas = useParams();
+const BoardMain = ({ defaultCurrentPage }) => {
+	const params = useParams();
   const currentPageValue = params.currentPage || defaultCurrentPage;
   const [posts, setPosts] = useState([]);
   const [totalPages, setTotalPages] = useState(1);
