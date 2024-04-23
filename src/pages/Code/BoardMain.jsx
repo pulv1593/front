@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import PostLayout from "../../components/PostLayout/PostLayout";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useParams } from "react";
 
-const BoardMain = ({ CurrentPage }) => {
-	const { initialPage } = useParams(); // 수정: currentPage로 변경
-  const currentPageValue = initialPage || CurrentPage || 0;
+const BoardMain = ({ defaulCurrentPageCurrentPage }) => {
+	const parmas = useParams();
+  const currentPageValue = params.currentPage || defaultCurrentPage;
   const [posts, setPosts] = useState([]);
   const [totalPages, setTotalPages] = useState(1);
 	const [currentPage, setCurrentPage] = useState(currentPageValue);
