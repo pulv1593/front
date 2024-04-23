@@ -37,7 +37,7 @@ function App () {
           <Route exact path="/" element={<Home />} />
           <Route path="/user" element={<Login />} />
 					<Route path="/login/oauth2/callback/kakao" element={<LoginHandler />} />
-          <Route path={`/post/list/:currentPage`} element={<BoardMain defaultCurrentPage={defaultCurrentPage} />} />
+          <Route path='/post/list/:currentPage' element={<BoardMain defaultCurrentPage={defaultCurrentPage} />} />
           <Route path="/post/preview/:codeId" element={<PostCodePreview />}/>
           <Route path="/post/:postId" element={<PostDetailReq />}/>
           <Route path="/post/ask" element={<RequestCode />} />

@@ -4,11 +4,9 @@ import axios from "axios";
 import { useEffect, useState, useParams } from "react";
 
 const BoardMain = ({ defaultCurrentPage }) => {
-	const params = useParams();
-  const currentPageValue =  parseInt(params.currentPage) || defaultCurrentPage;
-  const [posts, setPosts] = useState([]);
+	const [posts, setPosts] = useState([]);
   const [totalPages, setTotalPages] = useState(1);
-	const [currentPage, setCurrentPage] = useState(currentPageValue);
+  const [currentPage, setCurrentPage] = useState(defaultCurrentPage); 
   
   const redirect_uri = import.meta.env.VITE_BACK_REDIRECT_URI;
 
