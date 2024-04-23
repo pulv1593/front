@@ -17,12 +17,12 @@ const Dropdown = ({closeDrop}) => {
   };
 	
 	const kakaoLogout = async () => {
-		const access_token = localStorage.getItem('access_token');
+		const token = localStorage.getItem('access_token');
 		try {
-			if (access_token) {
+			if (token) {
 				const res = await axios.get(`${back_logout}`, null, {
 				  headers: {
-					Authorization: `Bearer ${access_token}`
+					Authorization: `Bearer ${token}`
 				  }
 				});
 			console.log('로그아웃 성공: ', res);
@@ -54,7 +54,7 @@ const Dropdown = ({closeDrop}) => {
         boxShadow: "0px 8px 16px 0px rgba(0,,0,0,0.2)",
       }}>
 		  
-      <Link to="/mypage/info" className="link borderBottom" onClick={dropdownClicked}>
+      <Link to="/mypage/member" className="link borderBottom" onClick={dropdownClicked}>
         <img src={Edit} />마이페이지
       </Link>
       <Link to="/mypage/list" className="link borderBottom" onClick={dropdownClicked}>

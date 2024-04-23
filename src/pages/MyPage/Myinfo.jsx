@@ -1,11 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import SignOutButton from '../../components/Button/SignOutButton';
 import kakao from '../../assets/KakaoTalk_logo.png';
-import './Myinfo.css';
 import axios from 'axios';
 
 const Myinfo = () => {
 	const navigate = useNavigate();
+// 	이 부분 경로 수정되고 동작 확인해보기
 	const back_user = 'https://k9bceeba41403a.user-app.krampoline.com/user';
 
 	const linkHome = () => {
@@ -110,9 +111,7 @@ const Myinfo = () => {
 		padding: "5%",
 		marginBottom: "30px",
 	  }}>
-		<button onClick={linkHome} className="Cancel">
-		  회원 탈퇴
-		</button>
+		<SignOutButton />
 	  </div>
 	</div>
 	);
