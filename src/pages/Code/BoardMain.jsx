@@ -3,9 +3,9 @@ import PostLayout from "../../components/PostLayout/PostLayout";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const BoardMain = ({ defaultCurrentPage }) => {
+const BoardMain = ({ CurrentPage }) => {
 	const { initialPage } = useParams(); // 수정: currentPage로 변경
-  const currentPageValue = initialPage || defaultCurrentPage || 0;
+  const currentPageValue = initialPage || CurrentPage || 0;
   const [posts, setPosts] = useState([]);
   const [totalPages, setTotalPages] = useState(1);
 	const [currentPage, setCurrentPage] = useState(currentPageValue);
