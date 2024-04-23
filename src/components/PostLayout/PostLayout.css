@@ -32,6 +32,14 @@
   color: black;
 }
 
+.dropdown-toggle {
+	border: none;
+  background: none;
+  cursor: pointer;
+	text-decoration: none;
+	color: black;
+}
+
 .ans-Btn {
   margin-top: 5px;
   width: 50px;
