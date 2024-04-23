@@ -45,7 +45,7 @@ const BoardMain = () => {
       <h1>게시판</h1>
       <div className="BoardMain-container" style={{ width: '100%', borderTop: '1px solid #ffe6e6' }}>
         <div className="questionBtn-container" style={{ display: "flex", flexDirection: "row-reverse" }}>
-          <Link to="/code/ask" style={{
+          <Link to="/post/ask" style={{
             backgroundColor: "#ff9e9e",
             margin: "5px",
             padding: "5px 10px",
