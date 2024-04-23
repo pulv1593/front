@@ -68,9 +68,7 @@ const Myinfo = () => {
 		  {/* 받아온 이름 뿌려주기 */}
 		  <p style={{
 			paddingTop: "10px",
-		  }}>
-			  <!-- <span>{userInfo.name}</span> -->
-			님</p>
+		  }}>님</p>
 		  <p style={{
 			paddingTop: "10px",
 		  }}>자기 소개</p>
@@ -103,8 +101,6 @@ const Myinfo = () => {
 		  <p value={} style={{
 			paddingLeft: "25%",
 		  }}>
-		  <!-- {/* 소셜 이메일 */}
-		  <span>{userInfo.email}</span> -->
 		  </p>
 		</div>
 	  </div>
