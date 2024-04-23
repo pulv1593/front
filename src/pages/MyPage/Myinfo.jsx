@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "React";
+import { useState, useEffect } from "react";
 import kakao from '../../assets/KakaoTalk_logo.png';
 import './Myinfo.css';
 import axios from 'axios';
@@ -11,10 +11,10 @@ const Myinfo = () => {
 	navigate('/');
 	};
 	
-	const [userInfo, setUserInfo] = setState({
-		name: '',
-		email: '',
-	});
+	// const [userInfo, setUserInfo] = setState({
+	// 	name: '',
+	// 	email: '',
+	// });
 	
 	const token = localStorage.getItem('access_token');
 	
