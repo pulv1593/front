@@ -58,7 +58,7 @@ function CodeQuestion () {
       });
 
       console.log('Server response:', response);
-      navigate("/post");
+      navigate("/post/list/0");
     } catch (error) {
       console.error('Error posting the data', error);
 			console.log(formData);
