@@ -8,6 +8,8 @@ const Home = () => {
   const linkLogin = () => {
     navigate('/user');
   };
+	
+	const token = localStorage.getItem("access_token");
 
   return (
     <div className="Home_Container" style={{
@@ -19,23 +21,42 @@ const Home = () => {
       <h1 style={{
         fontSize: "100px",
       }}>Image TO Code</h1>
-      <button 
-        className="Login_Btn" 
-        onClick={linkLogin} 
-        style={{
-          width: "100%",
-          fontSize: "40px",
-          border: "0",
-          backgroundColor: "transparent",
-      }}>START        
-        <img src={Arrow} style={{
-          width: "5%",
-          height: "5%",
-          paddingLeft: "20px"
-        }}/>
-      </button>
+		{!token && (
+			<button 
+				className="Login_Btn" 
+				onClick={linkLogin} 
+				style={{
+				  width: "100%",
+				  fontSize: "40px",
+				  border: "0",
+				  backgroundColor: "transparent",
+			  }}>START        
+				<img src={Arrow} style={{
+				  width: "5%",
+				  height: "5%",
+				  paddingLeft: "20px"
+				}}/>
+			  </button>
+		  )}
+		  {token && (
+			  <button 
+				className="Login_Btn" 
+				onClick={linkLogin} 
+				style={{
+				  width: "100%",
+				  fontSize: "40px",
+				  border: "0",
+				  backgroundColor: "transparent",
+			  }}>START        
+				<img src={Arrow} style={{
+				  width: "5%",
+				  height: "5%",
+				  paddingLeft: "20px"
+				}}/>
+			  </button>
+		  )}
     </div>
   )
 }
 
-export default Home
+export default Home;
