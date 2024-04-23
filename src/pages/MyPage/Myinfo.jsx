@@ -21,7 +21,7 @@ const Myinfo = () => {
 		const token = localStorage.getItem('access_token');
 		
 		const userInfo = async () => {
-			try (token) {
+			try {
 				const res = await axios.get(`${back_user}`, null, {
 					handers: {
 						Authorization: `Bearer ${token}`
