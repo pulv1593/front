@@ -1,11 +1,12 @@
 import { useNavigate } from "react-router-dom";
-// import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import kakao from '../../assets/KakaoTalk_logo.png';
 import './Myinfo.css';
 import axios from 'axios';
 
 const Myinfo = () => {
 	const navigate = useNavigate();
+	const back_user = 'https://k9bceeba41403a.user-app.krampoline.com/user';
 
 	const linkHome = () => {
 	navigate('/');
@@ -21,7 +22,7 @@ const Myinfo = () => {
 		
 		const userInfo = async () => {
 			try {
-				const res = await.axios.get('백엔드 api url', {
+				const res = await.axios.get(`${back_user}`, null, {
 					handers: {
 						Authorization: `Bearer ${token}`
 					}
