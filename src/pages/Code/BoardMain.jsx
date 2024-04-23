@@ -10,6 +10,7 @@ const BoardMain = () => {
   const [totalPages, setTotalPages] = useState(0);
 	
 	const redirect_uri = import.meta.env.VITE_BACK_REDIRECT_URI;
+	const access_token = localStorage.getItem('access_token');
 
   useEffect(() => {
     const fetchPosts = async () => {
