@@ -11,31 +11,32 @@ const Myinfo = () => {
 	navigate('/');
 	};
 	
-	// const [userInfo, setUserInfo] = useState({
-	// 	name: '',
-	// 	email: '',
-	// });
+	const [userInfo, setUserInfo] = useState({
+		name: '',
+		email: '',
+	});
 	
-	// const token = localStorage.getItem('access_token');
+	useEffect(() => {
+		const token = localStorage.getItem('access_token');
+		
+		const userInfo = async () => {
+			try {
+				const res = await.axios.get('백엔드 api url', {
+					handers: {
+						Authorization: `Bearer ${token}`
+					}
+				});
+				setUserInfo(res.data);
+			} catch (error) {
+				console.error('사용자 정보를 불러오는 중 오류가 발생했습니다.', error);
+				navigate('/');
+			}
+		};
+		if(token){
+			userInfo();
+		}
+	}, []);
 	
-	// useEffect(() => {
-	// 	const userInfo = async () => {
-	// 		try {
-	// 			const res = await.axios.get('백엔드 api url', {
-	// 				handers: {
-	// 					Authorization: `Bearer ${token}`
-	// 				}
-	// 			});
-	// 			setUserInfo(res.data);
-	// 		} catch (error) {
-	// 			console.error('사용자 정보를 불러오는 중 오류가 발생했습니다.', error);
-	// 			navigate('/');
-	// 		}
-	// 	};
-	// 	if(token){
-	// 		userInfo();
-	// 	}
-	// }, []);
 
 	return (
 	<div style={{
@@ -68,7 +69,9 @@ const Myinfo = () => {
 		  {/* 받아온 이름 뿌려주기 */}
 		  <p style={{
 			paddingTop: "10px",
-		  }}>님</p>
+		  }}>
+			 <span>{userInfo.name}</span>
+			  님</p>
 		  <p style={{
 			paddingTop: "10px",
 		  }}>자기 소개</p>
@@ -98,6 +101,7 @@ const Myinfo = () => {
 		  <p style={{
 			paddingLeft: "25%",
 		  }}>
+			  <span>{userInfo.email}</span>
 		  </p>
 		</div>
 	  </div>
