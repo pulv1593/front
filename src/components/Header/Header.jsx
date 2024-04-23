@@ -14,7 +14,6 @@ const Header = () => {
 	
 // 	로컬에서 token 가져옴
 	const token = localStorage.getItem('access_token');
-	console.log("토큰:  " +token);
 
   const dropdownClicked = () => {
     setIsOpen(!isOpen);
@@ -25,7 +24,7 @@ const Header = () => {
   };
 
   const linkMail = () => {
-    navigate('/chat');
+    navigate('/chat/start');
   };
 
   return (
