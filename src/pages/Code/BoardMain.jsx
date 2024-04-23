@@ -3,10 +3,12 @@ import PostLayout from "../../components/PostLayout/PostLayout";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const BoardMain = () => {
+const BoardMain = ({ defaultCurrentPage }) => {
+	const { currentPage } = useParams(); // 수정: currentPage로 변경
+  const currentPageValue = currentPage || defaultCurrentPage || 0;
   const [posts, setPosts] = useState([]);
-  const [currentPage, setCurrentPage] = useState(0);
   const [totalPages, setTotalPages] = useState(1);
+	const [currentPage, setCurrentPage] = useState(currentPageValue);
   
   const redirect_uri = import.meta.env.VITE_BACK_REDIRECT_URI;
 
