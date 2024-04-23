@@ -16,8 +16,8 @@ const Dropdown = ({closeDrop}) => {
   };
 	
 	const kakaoLogout() = async () => {
+		const token = localStorage.getItem('access_token');
 		try {
-			const token = localStorage.getItem('access_token');
 			if (token) {
 				const res = await axios.get(`${back_logout}`, null, {
 				  headers: {
@@ -27,9 +27,10 @@ const Dropdown = ({closeDrop}) => {
 			console.log('로그아웃 성공: ', res);
 			localStorage.clear();
 			navigate('/');
-			} catch (error) {
+			} 
+		}
+		catch (error) {
 			console.error('로그아웃 중 오류 발생', error);
-			}
 		}
 	}
 	
