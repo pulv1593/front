@@ -9,7 +9,7 @@ function CodeQuestion () {
   const navigate = useNavigate();
 	
 // 	axios 통신시 필요한 변수
-	const redirect_uri = `${import.meta.env.VITE_BACK_REDIRECT_URI}/post/ask`;
+	const redirect_uri = 'https://k9bceeba41403a.user-app.krampoline.com/post/ask';
 	const access_token = localStorage.getItem('access_token');
 	const member_id = localStorage.getItem('member_id');
 	
@@ -50,7 +50,7 @@ function CodeQuestion () {
     formData.append('contents', contents);
 		formData.append('member_id', member_id);
     try {
-      const response = await axios.post(`${redirect_uri}`, formData, {
+      const response = await axios.post( `${redirect_uri}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           'Authorization': `Bearer ${access_token}`,

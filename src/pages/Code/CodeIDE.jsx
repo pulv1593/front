@@ -1,5 +1,4 @@
 import { useNavigate, useParams } from "react-router-dom";
-// import posts from "../../components/postData/postData";
 import Editor from "../../components/CodeEditor/Editor";
 
 // component
