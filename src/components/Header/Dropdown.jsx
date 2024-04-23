@@ -24,11 +24,11 @@ const Dropdown = ({closeDrop}) => {
 					Authorization: `Bearer ${token}`
 				  }
 				});
+			};
 			console.log('로그아웃 성공: ', res);
 			localStorage.clear();
 			navigate('/');
-			} 
-		}
+		} 
 		catch (error) {
 			console.error('로그아웃 중 오류 발생', error);
 		}
