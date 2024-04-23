@@ -49,63 +49,66 @@ const Header = () => {
 			  width: "100%",
 			}}/>
 		 </button>
-		 <div className="button" 
-			style={{
-			  height: "100%",
-			  padding: "20px",
-			  display: "flex",
-			  justifyContent: "space-between",
-			  alignItems: "center",
-			}}>
-			<button onClick={linkMail} 
-			  style={{
-				width: "50px",
-				height: "50px",
-				margin: "5px",
-				border: "0",
-				borderRadius: "50%",
-				backgroundColor: "#ffffff",
-			  }}>
-			  <img src={Mail} style={{
-				width: "30px",
-			  }}/>
-			  {/* 알람 개수 받아오기 */}
-			  <span className="noticeCount" style={{
-				position: "absolute",
-				top: "5px",
-				right: "75px",
-				padding: "5px 10px",
-				borderRadius: "50%",
-				background: "red",
-				color: "white",
-			  }}>2</span>
-			</button>
-			<div className="dropdown" 
-			  ref={dropDownRef}
-			  style={{
-				position: "relative",
-				display: "inline-block",
-			  }}>
-			  <button 
-				className="Profile" 
-				onClick={dropdownClicked}
+		  {token && (
+		  	<div className="button" 
 				style={{
-				  width: "50px",
-				  height: "50px",
-				  margin: "5px",
-				  border: "0",
-				  borderRadius: "50%",
-				  backgroundColor: "#ffffff",
-				}} >
-				<img src={User} style={{
-				  width: "30px",
-				}}/>
-			  </button>
-			  {isOpen && (
-				<Dropdown closeDrop={[isOpen, setIsOpen]}/>
-			  )}
+				  height: "100%",
+				  padding: "20px",
+				  display: "flex",
+				  justifyContent: "space-between",
+				  alignItems: "center",
+				}}>
+				<button onClick={linkMail} 
+				  style={{
+					width: "50px",
+					height: "50px",
+					margin: "5px",
+					border: "0",
+					borderRadius: "50%",
+					backgroundColor: "#ffffff",
+				  }}>
+				  <img src={Mail} style={{
+					width: "30px",
+				  }}/>
+				  {/* 알람 개수 받아오기 */}
+				  <span className="noticeCount" style={{
+					position: "absolute",
+					top: "5px",
+					right: "75px",
+					padding: "5px 10px",
+					borderRadius: "50%",
+					background: "red",
+					color: "white",
+				  }}>2</span>
+				</button>
+				<div className="dropdown" 
+				  ref={dropDownRef}
+				  style={{
+					position: "relative",
+					display: "inline-block",
+				  }}>
+				  <button 
+					className="Profile" 
+					onClick={dropdownClicked}
+					style={{
+					  width: "50px",
+					  height: "50px",
+					  margin: "5px",
+					  border: "0",
+					  borderRadius: "50%",
+					  backgroundColor: "#ffffff",
+					}} >
+					<img src={User} style={{
+					  width: "30px",
+					}}/>
+				  </button>
+				  {isOpen && (
+					<Dropdown closeDrop={[isOpen, setIsOpen]}/>
+				  )}
+				</div>
 			</div>
-		</div>
+		  )}
+		 
     </div>
   )
 }
