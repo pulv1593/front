@@ -11,7 +11,7 @@ const Myinfo = () => {
 	navigate('/');
 	};
 	
-	// const [userInfo, setUserInfo] = setState({
+	// const [userInfo, setUserInfo] = useState({
 	// 	name: '',
 	// 	email: '',
 	// });
@@ -95,7 +95,7 @@ const Myinfo = () => {
 			width: "80px",
 			height: "auto",
 		  }}/>
-		  <p value={} style={{
+		  <p style={{
 			paddingLeft: "25%",
 		  }}>
 		  </p>
