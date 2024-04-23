@@ -1,34 +1,27 @@
 import { Link } from "react-router-dom";
 import "./PostLayout.css";
-import posts from "../postData/postData";
 
-function PostLayout() {
-	
-  if (!posts || posts.length === 0) {
-    return <div className="post-container">게시글이 없습니다.</div>;
-  }
-
-  return (
-    <div className="post-container">
-      {posts.map((post, index) => (
-        <div className="post" key={post.id}>
-          <Link to={`/code/${post.id}`} style={{textDecoration: "none", color: "black"}}>
-            <div className="postImage">
-              <img id="postImage" src={post.image} alt="사진" />
-            </div>
-            <div className="post-info">
-              <div className="profileImage">  
-                <img id="user-profile" src={post.userProfile} alt="프로필"/>
-              </div>
-              <div className="postTitle">
-                {post.title}
-              </div>
-            </div>
-          </Link>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-export default PostLayout
+  const PostLayout = ({post}) => {
+    if (!post || post.length === 0) {
+      return <div className="post-container">게시글이 없습니다.</div>;
+    }
+		
+    return (
+      <div className="post-container">
+        <Link to={`/post/${post.postId}`}>
+          <div className="image-container">
+            <img src={post.imgBase64} alt="사진"/> 
+          </div>
+          <div className="post-info-container">
+            <p>작성자: {post.member_id}</p>
+            <p>{post.title}</p>
+          </div>
+        </Link>
+        <Link to="/code" className="ans-Btn">
+          답변
+        </Link>
+      </div>
+    );
+  };
+  
+export default PostLayout;

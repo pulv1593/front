@@ -15,7 +15,7 @@ import RequestList from './pages/MyPage/RequestList';
 import AnswerList from './pages/MyPage/AnswerList';
 import SaveCodeList from './pages/MyPage/SaveCodeList';
 import Myinfo from './pages/MyPage/Myinfo';
-import PostDetailAns from './pages/Code/PostDetailAns';
+import PostCodePreview from './pages/Code/PostCodePreview';
 import PostDetailReq from './pages/Code/PostDetailReq';
 
 function App () {
@@ -35,11 +35,11 @@ function App () {
           <Route exact path="/" element={<Home />} />
           <Route path="/user" element={<Login />} />
 					<Route path="/login/oauth2/callback/kakao" element={<LoginHandler />} />
-          <Route path="/code" element={<BoardMain />} />
-          <Route path="/code/answer/:postId" element={<PostDetailAns />}/>
-          <Route path="/code/:postId" element={<PostDetailReq />}/>
-          <Route path="/code/ask" element={<RequestCode />} />
-          <Route path="/css/:postId" element={<CodeIDE />} />
+          <Route path="/post" element={<BoardMain />} />
+          <Route path="/post/preview/:codeId" element={<PostCodePreview />}/>
+          <Route path="/post/:postId" element={<PostDetailReq />}/>
+          <Route path="/post/ask" element={<RequestCode />} />
+          <Route path="/code" element={<CodeIDE />} />
           <Route path="/chat" element={<Chat /> } />
           <Route path="/mypage/info" element={<Myinfo />} />
           <Route path="/mypage/list" element={<RequestList />} />
