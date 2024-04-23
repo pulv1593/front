@@ -15,7 +15,7 @@ const BoardMain = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await axios.get(`${redirect_uri}/post/list/${currentPage}`);
+        const response = await axios.get(`${redirect_uri}/post/list/${currentPage}`);
         const res = response.data;
         setPosts(res.posts);
         setTotalPages(res.totalPages); // 받아온 totalPages 값을 설정합니다.
