@@ -16,29 +16,29 @@ const Dropdown = ({closeDrop}) => {
     close[1](!close[0]);
   };
 	
-	const logoutClicked = () => {
-		dropdownClicked();
-		kakaoLogout();
-	};
+	// const logoutClicked = () => {
+	// 	dropdownClicked();
+	// 	kakaoLogout();
+	// };
 	
-	useEffect(() => {
-		const kakaoLogout() = async () => {
-			try {
-				const token = localStorage.getItem('access_token');
-				if (token) {
-					const res = await axios.get(`${back_logout}`, null, {
-					  headers: {
-						Authorization: `Bearer ${token}`
-					  }
-					});
-				console.log('로그아웃 성공: ', res);
-				navigate('/');
-				} catch (error) {
-				console.error('로그아웃 중 오류 발생', error);
-				}
-			}
-		}
-	});
+	// useEffect(() => {
+	// 	const kakaoLogout() = async () => {
+	// 		try {
+	// 			const token = localStorage.getItem('access_token');
+	// 			if (token) {
+	// 				const res = await axios.get(`${back_logout}`, null, {
+	// 				  headers: {
+	// 					Authorization: `Bearer ${token}`
+	// 				  }
+	// 				});
+	// 			console.log('로그아웃 성공: ', res);
+	// 			navigate('/');
+	// 			} catch (error) {
+	// 			console.error('로그아웃 중 오류 발생', error);
+	// 			}
+	// 		}
+	// 	}
+	// });
 	
   return (
     <div className="dropdownList active" 
@@ -64,7 +64,7 @@ const Dropdown = ({closeDrop}) => {
       <Link to="/mypage/code" className="link borderBottom" onClick={dropdownClicked}>
         <img src={Answer}/>답변한 코드
       </Link>
-      <Link to="/" className="link" onClick={logoutClicked}>
+      <Link to="/" className="link" onClick={dropdownClicked}>
         <img src={Logout}/>로그아웃
       </Link>
     </div>
