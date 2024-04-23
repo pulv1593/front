@@ -9,6 +9,10 @@ const Home = () => {
     navigate('/user');
   };
 	
+	const linkLoginSuc = () => {
+		navigate('/code');
+	};
+	
 	const token = localStorage.getItem("access_token");
 	console.log("home");
 
@@ -42,7 +46,7 @@ const Home = () => {
 		  {token && (
 			  <button 
 				className="Login_Btn" 
-				onClick={linkLogin} 
+				onClick={linkLoginSuc} 
 				style={{
 				  width: "100%",
 				  fontSize: "40px",
