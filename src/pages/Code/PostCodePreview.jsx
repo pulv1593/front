@@ -9,17 +9,17 @@ const PostCodePreview = () => {
 	const back_uri = import.meta.env.VITE_BACK_REDIRECT_URI;
 
   // post가 존재하지 않는 경우 처리
-  if (!post) {
-    return <div>Post not found</div>;
-  }
-	useEffect (() => {
-		const codePreview = async() => {
-			try {
-				const res = await axios.get(`${back_uri}/code/${code_id}`);
-				console.log('response:', response.data);
-			}
-		}
-	})
+//   if (!post) {
+//     return <div>Post not found</div>;
+//   }
+// 	useEffect (() => {
+// 		const codePreview = async() => {
+// 			try {
+// 				const res = await axios.get(`${back_uri}/code/${code_id}`);
+// 				console.log('response:', response.data);
+// 			}
+// 		}
+// 	})
 	
 	const handleAnswer = () => {
 // 	채택 axios 통신을 위한 페이지 이동.
