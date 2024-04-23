@@ -15,7 +15,7 @@ const Dropdown = ({closeDrop}) => {
     close[1](!close[0]);
   };
 	
-	const kakaoLogout() = async () => {
+	const kakaoLogout = async () => {
 		const token = localStorage.getItem('access_token');
 		try {
 			if (token) {
