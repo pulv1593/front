@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import kakao from '../../assets/KakaoTalk_logo.png';
 import './Myinfo.css';
 import axios from 'axios';
@@ -16,7 +16,7 @@ const Myinfo = () => {
 	// 	email: '',
 	// });
 	
-	const token = localStorage.getItem('access_token');
+	// const token = localStorage.getItem('access_token');
 	
 	// useEffect(() => {
 	// 	const userInfo = async () => {
@@ -77,9 +77,9 @@ const Myinfo = () => {
 			height: "50%",
 		  }}/>
 		  <!-- {/* 본인이면 수정/탈퇴 버튼 보여주고, 본인이 아니면 안보여줌 */} -->
-			{token && (
+			<!-- {token && (
 				<button className="edit_btn">저장</button>
-			)}
+			)} -->
 		</div>
 	  </div>
 	  <div style={{
