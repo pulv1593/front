@@ -5,7 +5,7 @@ import { useEffect, useState, useParams } from "react";
 
 const BoardMain = ({ defaultCurrentPage }) => {
 	const params = useParams();
-  const currentPageValue = params.currentPage || defaultCurrentPage;
+  const currentPageValue =  parseInt(params.currentPage) || defaultCurrentPage;
   const [posts, setPosts] = useState([]);
   const [totalPages, setTotalPages] = useState(1);
 	const [currentPage, setCurrentPage] = useState(currentPageValue);
