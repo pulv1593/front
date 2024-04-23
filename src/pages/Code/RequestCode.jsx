@@ -26,26 +26,29 @@ function CodeQuestion () {
 	const allowedExtensions = ['jpg', 'jpeg', 'png'];
 
 	const isImageFile = (filename) => {
-		const ext = filename.split('.').pop().toLowerCase();
-		return allowedExtensions.includes(ext);
+    const ext = filename.split('.').pop().toLowerCase();
+    return allowedExtensions.includes(ext);
 	};
 
 	const handleImageChange = (e) => {
-		if (e.target.files[0]) {
+    if (e.target.files[0]) {
 			const file = e.target.files[0];
-			if (!isImageFile(file.name)) {
+			const filename = file.name.toLowerCase();
+			const isValidExtension = isImageFile(filename);
+        
+			if (!isValidExtension) {
 				alert('이미지 파일만 업로드할 수 있습니다.');
 				return;
-			}
+			}  
 			setImage(file);
-		}
+    }
 	};
 
 	
 //작성하기 버튼 클릭시 post 정보를 db에 전달.(member_id 처리는 어떻게 할건지?)
   const handlePostSubmit = async () => {
     const formData = new FormData();
-    formData.append('imgBase64', image);
+    formData.append('image', image);
     formData.append('title', title);
     formData.append('contents', contents);
 		formData.append('member_id', member_id);
