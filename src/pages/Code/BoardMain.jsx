@@ -50,9 +50,9 @@ const BoardMain = ({ defaultCurrentPage }) => {
           }}> 질문하기 </Link>
         </div>
         <div className="post-list-container">
-          {posts.map(post => (
-            <PostLayout key={post.postId} post={post} />
-          ))}
+          {posts.length > 0 && posts.map(post => (
+    				<PostLayout key={post.postId} post={post} />
+  				))}
         </div>
       </div>
       <div className="pagination">

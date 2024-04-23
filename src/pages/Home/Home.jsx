@@ -10,7 +10,7 @@ const Home = () => {
   };
 	
 	const linkLoginSuc = () => {
-		navigate("/post/list/:currentPage");
+		navigate("/post/list/0");
 	};
 	
 	const token = localStorage.getItem("access_token");
