@@ -36,7 +36,7 @@ function App () {
           width: "100%",
         }}>
         <Routes>
-			<Switch>
+			<!-- <Switch> -->
 			  <Route exact path="/" element={<Home />} />
 			  <Route path="/user" element={<Login />} />
 				<Route path="/login/oauth2/callback/kakao" element={<LoginHandler />} />
@@ -51,7 +51,7 @@ function App () {
 			  <Route path="/mypage/list" element={<RequestList />} />
 			  <Route path="/mypage/post" element={<SaveCodeList />} />
 			  <Route path="/mypage/code" element={<AnswerList />} />
-			</Switch>
+			<!-- </Switch> -->
         </Routes>
         </div>
 
