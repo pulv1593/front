@@ -1,5 +1,4 @@
 import { useNavigate, useParams } from "react-router-dom";
-import posts from "../../components/postData/postData";
 import Editor from "../../components/CodeEditor/Editor";
 
 // component
@@ -18,10 +17,10 @@ const CodeIDE = () => {
   const openImageInNewTab = () => {
     window.open(post.image, '_blank');
   };
-
-  const handleAnswer = () => {
-    navigate(`/code/${postId}`); // 질문 상세 페이지로 이동
-  };
+	
+  const handleCodeSave = () => {
+		console.log('답변 저장 중...')
+	};
 
   // post가 존재하는 경우, 해당 post의 상세 정보를 표시
   return (
@@ -30,10 +29,10 @@ const CodeIDE = () => {
         <h1>{post.title}</h1>
         <div style={{alignItems:"center"}}>
           <button onClick={openImageInNewTab} style={{width:"110px", height:"40px", margin:"10px 10px", fontSize:"20px"}}>이미지 확대</button>
-          <button onClick={handleAnswer} style={{width:"100px", height:"40px", margin:"10px 10px", fontSize:"20px"}}> 저장 </button>
+          <button onClick={handleCodeSave} style={{width:"100px", height:"40px", margin:"10px 10px", fontSize:"20px"}}> 저장 </button>
         </div>
       </div>
-      <Editor />
+      <Editor onSave={handleCodeSave} postId={postId} />
     </div>
   );
 }

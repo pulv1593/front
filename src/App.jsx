@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // component 가져오기
 import Header from './components/Header/Header';
@@ -11,14 +11,17 @@ import BoardMain from './pages/Code/BoardMain';
 import RequestCode from './pages/Code/RequestCode';
 import Chat from './pages/Chat/Chat';
 import CodeIDE from './pages/Code/CodeIDE';
+import MyCodeIDE from './pages/Code/MyCodeIDE';
 import RequestList from './pages/MyPage/RequestList';
 import AnswerList from './pages/MyPage/AnswerList';
 import SaveCodeList from './pages/MyPage/SaveCodeList';
 import Myinfo from './pages/MyPage/Myinfo';
-import PostDetailAns from './pages/Code/PostDetailAns';
+import PostCodePreview from './pages/Code/PostCodePreview';
 import PostDetailReq from './pages/Code/PostDetailReq';
 
 function App () {
+	const defaultCurrentPage = 0;
+	
   return (
     <div className='App' style={{
       height: "auto",
@@ -32,22 +35,22 @@ function App () {
           width: "100%",
         }}>
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/user" element={<Login />} />
-					<Route path="/login/oauth2/callback/kakao" element={<LoginHandler />} />
-          <Route path="/code" element={<BoardMain />} />
-          <Route path="/code/answer/:postId" element={<PostDetailAns />}/>
-          <Route path="/code/:postId" element={<PostDetailReq />}/>
-          <Route path="/code/ask" element={<RequestCode />} />
-          <Route path="/css/:postId" element={<CodeIDE />} />
-          <Route path="/chat" element={<Chat /> } />
-          <Route path="/mypage/info" element={<Myinfo />} />
-          <Route path="/mypage/list" element={<RequestList />} />
-          <Route path="/mypage/post" element={<SaveCodeList />} />
-          <Route path="/mypage/code" element={<AnswerList />} />
+		  <Route exact path="/" element={<Home />} />
+		  <Route path="/user" element={<Login />} />
+			<Route path="/login/oauth2/callback/kakao" element={<LoginHandler />} />
+		  <Route path='/post/list/:currentPage' element={<BoardMain defaultCurrentPage={defaultCurrentPage} />} />
+			<Route path="/post/ask" element={<RequestCode />} />
+			<Route path="/post/:postId" element={<PostDetailReq />}/>
+		  <Route path="/post/preview/:codeId" element={<PostCodePreview />}/>
+		  <Route path="/reply" element={<CodeIDE />} />
+		  <Route path="/code" element={<MyCodeIDE />} />
+		  <Route path="/chat/start" element={<Chat /> } />
+		  <Route path="/mypage/member" element={<Myinfo />} />
+		  <Route path="/mypage/list" element={<RequestList />} />
+		  <Route path="/mypage/code" element={<SaveCodeList />} />
+		  <Route path="/mypage/post" element={<AnswerList />} />
         </Routes>
         </div>
-
         <Footer />
       </Router>
     </div>

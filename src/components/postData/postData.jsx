@@ -1,44 +1,44 @@
 // 테스트용 post 임시 데이터
 const posts = [
   { 
-    id: 1,
-    user_id: 1,
+    postId: 1,
+    member_id: 3,
     title: "게시글1",
-    userProfile: "이미지",
-    image: "사진",
+    imageBase64: "사진",
+		createdTime: "2024-04-23T15:53:16",
     content : "이렇게 해주세요.",
   },
-  { 
-    id: 2,
-    user_id: 2,
-    title: "게시글2",
-    userProfile: "이미지",
-    image: "사진",
-    content : "이렇게 해주세요."
+	{ 
+    postId: 2,
+    member_id: 5,
+    title: "게시글1",
+    imageBase64: "사진",
+		createdTime: "2024-04-23T15:53:16",
+    content : "이렇게 해주세요.",
   },
-  { 
-    id: 3,
-    user_id: 2,
-    title: "게시글3",
-    userProfile: "이미지",
-    image: "사진",
-    content : "이렇게 해주세요."
+	{ 
+    postId: 3,
+    member_id: 1,
+    title: "게시글1",
+    imageBase64: "사진",
+		createdTime: "2024-04-23T15:53:16",
+    content : "이렇게 해주세요.",
   },
-  { 
-    id: 4,
-    user_id: 2,
-    title: "게시글4",
-    userProfile: "이미지",
-    image: "사진",
-    content : "이렇게 해주세요."
+	{ 
+    postId: 4,
+    member_id: 2,
+    title: "게시글1",
+    imageBase64: "사진",
+		createdTime: "2024-04-23T15:53:16",
+    content : "이렇게 해주세요.",
   },
-  { 
-    id: 5,
-    user_id: 1,
-    title: "게시글5",
-    userProfile: "이미지",
-    image: "사진",
-    content : "이렇게 해주세요."
+	{ 
+    postId: 5,
+    member_id: 4,
+    title: "게시글1",
+    imageBase64: "사진",
+		createdTime: "2024-04-23T15:53:16",
+    content : "이렇게 해주세요.",
   },
 ];
 
