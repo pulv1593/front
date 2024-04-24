@@ -14,6 +14,7 @@ const Header = () => {
 	
 // 	로컬에서 token 가져옴
 	const token = localStorage.getItem('access_token');
+	const my_member_id = localStorage.getItem('member_id');
 	const profile = localStorage.getItem('profile');
 
   const dropdownClicked = () => {
@@ -25,7 +26,7 @@ const Header = () => {
   };
 
   const linkMail = () => {
-    navigate('https://k9bceeba41403a.user-app.krampoline.com/chat/start');
+    window.location.href = `https://k9bceeba41403a.user-app.krampoline.com/${my_member_id}`;
   };
 
   return (
