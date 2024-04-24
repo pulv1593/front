@@ -13,6 +13,7 @@ function Editor({onSave, postId}) {
   const [js_edit, setJs_Edit] = useState('');
   const [srcCode, setSrcCode] = useState('');
 	const redirect_uri = import.meta.env.VITE_BACK_REDIRECT_URI;
+	const postIdNum = postId
 
 // 기능1: result 컴포넌트에 editor에서 작성된 코드 넘겨주기
   const onChangeHtml = useCallback((value) => {
@@ -44,18 +45,17 @@ function Editor({onSave, postId}) {
 		const html = JSON.stringify(html_edit);
 		const css = JSON.stringify(css_edit);
 		const js = JSON.stringify(js_edit);
+		const code = {
+			postId : postIdNum,
+			html: html,
+			css: css,
+			js: js,
+		}
 		try {
 			const access_token = localStorage.getItem('access_token');
-			const postIdValue = postId;
-			const formData = new FormData();
-			formData.append('postId', postIdValue);
-			formData.append('html', html);
-			formData.append('css', css);
-			formData.append('js', js);
-
-			const response = await axios.post(`${redirect_uri}/reply`, formData, {
+			const response = await axios.post(`${redirect_uri}/reply`, code, {
 				headers: {
-					'Content-Type': 'multipart/form-data',
+					'Content-Type': 'application/json',
 					'Authorization': `Bearer ${access_token}`,
 				}
 			});
