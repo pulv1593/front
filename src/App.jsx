@@ -41,7 +41,7 @@ function App () {
 		  <Route path='/post/list/:currentPage' element={<BoardMain defaultCurrentPage={defaultCurrentPage} />} />
 			<Route path="/post/ask" element={<RequestCode />} />
 			<Route path="/post/:postId" element={<PostDetailReq />}/>
-		  <Route path="/post/preview/:codeId" element={<PostCodePreview />}/>
+		  <Route path="/post/preview" element={<PostCodePreview />}/>
 		  <Route path="/reply" element={<CodeIDE />} />
 		  <Route path="/code" element={<MyCodeIDE />} />
 		  <Route path="/chat/start" element={<Chat /> } />
