@@ -12,6 +12,7 @@ import RequestCode from './pages/Code/RequestCode';
 import Chat from './pages/Chat/Chat';
 import CodeIDE from './pages/Code/CodeIDE';
 import MyCodeIDE from './pages/Code/MyCodeIDE';
+import CodeChoice from './pages/Code/CodeChoice';
 import RequestList from './pages/MyPage/RequestList';
 import AnswerList from './pages/MyPage/AnswerList';
 import SaveCodeList from './pages/MyPage/SaveCodeList';
@@ -44,6 +45,7 @@ function App () {
 		  <Route path="/post/preview" element={<PostCodePreview />}/>
 		  <Route path="/reply" element={<CodeIDE />} />
 		  <Route path="/code" element={<MyCodeIDE />} />
+		  <Route path="/post/choice" element={<CodeChoice />} />
 		  <Route path="/chat/start" element={<Chat /> } />
 		  <Route path="/mypage/member" element={<Myinfo />} />
 		  <Route path="/mypage/list" element={<RequestList />} />
