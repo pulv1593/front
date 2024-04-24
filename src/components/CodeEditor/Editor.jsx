@@ -55,7 +55,7 @@ function Editor({postId}) {
 			const response = await axios.post(`${redirect_uri}/reply`, code, {
 				headers: {
 					'Content-Type': 'application/json',
-					'Authorization': `Bearer ${access_token}`,
+					Authorization: `Bearer ${access_token}`,
 				}
 			});
 			console.log('Save response:', response.data);

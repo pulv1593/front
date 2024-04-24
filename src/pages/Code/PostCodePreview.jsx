@@ -19,6 +19,7 @@ const PostCodePreview = () => {
         const replyId = replyIdNum;
 				const response = await axios.post(`${redirect_uri}/post/preview`, replyId, {
 						headers: {
+							'Content-Type': 'application/json',
 							Authorization: `Bearer ${access_token}`,
 						}
 					});
