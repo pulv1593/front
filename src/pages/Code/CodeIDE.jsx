@@ -15,7 +15,7 @@ const CodeIDE = () => {
     const fetchPosts = async () => {
       try {
         const access_token = localStorage.getItem('access_token');
-        const response = await axios.get(`${redirect_uri}/post/${postId}`, {
+        const response = await axios.get(`${redirect_uri}/post/${postIdNum}`, {
           headers: {
             Authorization: `Bearer ${access_token}`,
           }
