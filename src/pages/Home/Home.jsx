@@ -48,36 +48,38 @@ const Home = () => {
 			  </button>
 		  )}
 		  {token && (
-			  <button 
-				className="Start_Btn" 
-				onClick={linkLoginSuc}
-				style={{
-				  width: "100%",
-				  fontSize: "40px",
-				  border: "0",
-				  backgroundColor: "transparent",
-			  }}>START
-				<img src={Arrow} style={{
-				  width: "5%",
-				  height: "5%",
-				  paddingLeft: "20px"
-				}}/>
-			  </button>
-			  <button 
-				className="Go_IDE" 
-				onClick={linkIDE}
-				style={{
-				  width: "100%",
-				  fontSize: "40px",
-				  border: "0",
-				  backgroundColor: "transparent",
-			  }}>Go to IDE
-				<img src={Arrow} style={{
-				  width: "5%",
-				  height: "5%",
-				  paddingLeft: "20px"
-				}}/>
-			  </button>
+			  <div>
+				  <button 
+					className="Start_Btn" 
+					onClick={linkLoginSuc}
+					style={{
+					  width: "100%",
+					  fontSize: "40px",
+					  border: "0",
+					  backgroundColor: "transparent",
+				  }}>START
+					<img src={Arrow} style={{
+					  width: "5%",
+					  height: "5%",
+					  paddingLeft: "20px"
+					}}/>
+				  </button>
+				  <button 
+					className="Go_IDE" 
+					onClick={linkIDE}
+					style={{
+					  width: "100%",
+					  fontSize: "40px",
+					  border: "0",
+					  backgroundColor: "transparent",
+				  }}>Go to IDE
+					<img src={Arrow} style={{
+					  width: "5%",
+					  height: "5%",
+					  paddingLeft: "20px"
+					}}/>
+				  </button>
+				</div>
 		  )}
     </div>
   )
