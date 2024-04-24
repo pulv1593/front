@@ -58,27 +58,34 @@ const Myinfo = () => {
 		  <p style={{
 			fontSize: "20px", 
 		  }}>프로필</p>
-		  <img src={profile} alt="프로필 이미지" />
 		</div>
-		<div style={{
-		  width: "100%",
-		  padding: "50px",
-		  fontSize: "1.2rem",
-		}}>
-		  {/* 받아온 이름 뿌려주기 */}
-		  <p style={{
-			paddingTop: "10px",
-		  }}>
-			 <span>{userInfo.name}</span>
-			  님</p>
-		</div>
+		  	<div style={{
+				  padding: "10%"",
+				  display: "flex", 
+				  alignItems: "center",
+			}}>
+			  <img src={profile} alt="프로필 이미지" />
+			  <div style={{
+				  width: "100%",
+				  padding: "50px",
+				  fontSize: "1.2rem",
+				}}>
+				  {/* 받아온 이름 뿌려주기 */}
+				  <p style={{
+					paddingTop: "10px",
+				  }}>
+					 <span>{userInfo.name}</span>
+					  님</p>
+				</div>
+		  </div>
+		
 	  </div>
 	  <div style={{
 		padding: "30px",
 		marginBottom: "30px",
 	  }}>
 		<p style={{
-		  fontSize: "25px",
+		  fontSize: "20px",
 		}}>소셜 로그인 계정</p>
 		<div style={{
 		  padding: "10%",
@@ -86,7 +93,7 @@ const Myinfo = () => {
 		  alignItems: "center",
 		}}>
 		  <img src={kakao} style={{
-			width: "80px",
+			width: "50px",
 			height: "auto",
 		  }}/>
 		  <p style={{
@@ -95,11 +102,6 @@ const Myinfo = () => {
 			  <span>{userInfo.email}</span>
 		  </p>
 		</div>
-	  </div>
-	  <div style={{
-		padding: "5%",
-		marginBottom: "30px",
-	  }}>
 	  </div>
 	</div>
 	);

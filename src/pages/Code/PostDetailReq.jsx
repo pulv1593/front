@@ -45,7 +45,7 @@ function PostDetailReq() {
             </div>
             <div className='answerList-container' style={{border:"1px solid black", margin:"10px", padding:"10px", width:"800px", height:"600px"}}>
               {code?.map(code => (
-                <CodeLayout code={code} />
+                <CodeLayout key={code.replyId} code={code} />
               ))}
             </div>
           </div>
