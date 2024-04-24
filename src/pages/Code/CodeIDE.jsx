@@ -7,7 +7,11 @@ import axios from "axios";
 
 const CodeIDE = () => {
   const { postId } = useParams();
+	console.log("postId:", postId);
+	console.log("type:", typeof(postId));
   const postIdNum = parseInt(postId, 10);
+	console.log("postIdNum:", postIdNum);
+	console.log("type:", typeof(postIdNum));
   const [post, setPost] = useState(null);
 	const redirect_uri = import.meta.env.VITE_BACK_REDIRECT_URI 
 	
