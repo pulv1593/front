@@ -14,6 +14,7 @@ const Header = () => {
 	
 // 	로컬에서 token 가져옴
 	const token = localStorage.getItem('access_token');
+	const profile = localStorage.getItem('profile');
 
   const dropdownClicked = () => {
     setIsOpen(!isOpen);
@@ -98,7 +99,7 @@ const Header = () => {
 					  borderRadius: "50%",
 					  backgroundColor: "#ffffff",
 					}} >
-					<img src={User} style={{
+					<img src={profile} style={{
 					  width: "30px",
 					}}/>
 				  </button>

@@ -13,10 +13,11 @@ const Myinfo = () => {
 		name: '',
 		email: '',
 	});
+	const [profile, setProfile] = useState('');
 	
 	useEffect(() => {
 		const token = localStorage.getItem('access_token');
-		console.log(token);
+		const profile = localStorage.getItem('profile');
 		const userInfo = async () => {
 			try {
 				const res = await axios.get('https://k9bceeba41403a.user-app.krampoline.com/mypage/member', {
@@ -32,6 +33,9 @@ const Myinfo = () => {
 		};
 		if(token){
 			userInfo();
+		}
+		if(profile) {
+			setProfile(profile);
 		}
 	}, []);
 	
@@ -56,7 +60,7 @@ const Myinfo = () => {
 		  <p style={{
 			fontSize: "20px", 
 		  }}>프로필</p>
-		  <img src="https://dummyimage.com/250x250/000/e0e0e0.png&text=profile+img"/>
+		  <img src={profile} alt="프로필 이미지" />
 		</div>
 		<div style={{
 		  width: "100%",
@@ -106,7 +110,6 @@ const Myinfo = () => {
 		padding: "5%",
 		marginBottom: "30px",
 	  }}>
-		<SignOutButton />
 	  </div>
 	</div>
 	);
