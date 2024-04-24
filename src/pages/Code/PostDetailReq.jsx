@@ -8,7 +8,11 @@ function PostDetailReq() {
   const postIdNum = parseInt(postId, 10);
   const [post, setPost] = useState(null);
 	const redirect_uri = import.meta.env.VITE_BACK_REDIRECT_URI;
-
+	
+	if (!post) {
+    return <div>Loading...</div>;
+  }
+	
   // const handleAnswer = () => {
   //   navigate(`/post/preview?codeId=${codeId}`);
   // };
