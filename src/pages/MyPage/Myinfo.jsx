@@ -58,27 +58,22 @@ const Myinfo = () => {
 		  <p style={{
 			fontSize: "20px", 
 		  }}>프로필</p>
-		</div>
 		  	<div style={{
 				  padding: "10%",
 				  display: "flex", 
 				  alignItems: "center",
 			}}>
-			  <img src={profile} alt="프로필 이미지" />
-			  <div style={{
-				  width: "100%",
-				  padding: "50px",
-				  fontSize: "1.2rem",
-				}}>
-				  {/* 받아온 이름 뿌려주기 */}
+			  <img src={profile} alt="프로필 이미지" style={{
+				width: "70px",
+				height: "auto",
+			  }}/>
 				  <p style={{
 					paddingTop: "10px",
+					fontSize: "16px",
 				  }}>
 					 <span>{userInfo.name}</span>
-					  님</p>
-				</div>
+				님</p>
 		  </div>
-		
 	  </div>
 	  <div style={{
 		padding: "30px",
@@ -98,6 +93,7 @@ const Myinfo = () => {
 		  }}/>
 		  <p style={{
 			paddingLeft: "25%",
+			fontSize: "16px",
 		  }}>
 			  <span>{userInfo.email}</span>
 		  </p>

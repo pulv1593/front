@@ -70,7 +70,7 @@ const Header = () => {
 				  <img src={Mail} style={{
 					width: "30px",
 				  }}/>
-				  {/* 알람 개수 받아오기 */}
+				  <!-- {/* 알람 개수 받아오기 */}
 				  <span className="noticeCount" style={{
 					position: "absolute",
 					top: "4px",
@@ -79,7 +79,7 @@ const Header = () => {
 					borderRadius: "50%",
 					background: "red",
 					color: "white",
-				  }}>2</span>
+				  }}>2</span> -->
 				</button>
 				<div className="dropdown" 
 				  ref={dropDownRef}
