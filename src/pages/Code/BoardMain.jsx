@@ -10,24 +10,23 @@ const BoardMain = ({ defaultCurrentPage }) => {
   
   const redirect_uri = import.meta.env.VITE_BACK_REDIRECT_URI;
 
-  const fetchPosts = async () => {
-	const access_token = localStorage.getItem('access_token');
-    try {
-      const response = await axios.get(`${redirect_uri}/post/list/${currentPage}`, {
-				headers: {
-					Authorization: `Bearer ${access_token}`
-				}
-			});
-      const res = response.data;
-      setPosts(res.posts);
-      setTotalPages(res.totalPages);
-    } catch (error) {
-      console.error('Error fetching posts:', error);
-    }
-  };
-
-  // 메인페이지 default : page = 0
+// 메인페이지 default : page = 0
   useEffect(() => {
+		const fetchPosts = async () => {
+			const access_token = localStorage.getItem('access_token');
+				try {
+					const response = await axios.get(`${redirect_uri}/post/list/${currentPage}`, {
+						headers: {
+							Authorization: `Bearer ${access_token}`
+						}
+					});
+					const res = response.data;
+					setPosts(res.content);
+					setTotalPages(res.totalPages);
+				} catch (error) {
+					console.error('Error fetching posts:', error);
+				}
+			};
     fetchPosts();
   }, [currentPage]); // currentPage가 변경될 때마다 fetchPosts 함수를 호출합니다.
 
