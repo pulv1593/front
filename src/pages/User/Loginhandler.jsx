@@ -24,7 +24,7 @@ const LoginHandeler = () => {
 			console.log("성공" + code);
 			
 			setTimeout(() => {
-				navigate("/code");
+				navigate("/post/list/0");
 			}, 100);
 		} catch (error){
 			console.error("Error occured", error);
