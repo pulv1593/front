@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useState } from 'react';
 import "./PostLayout.css";
 
   const PostLayout = ({post}) => {
@@ -16,7 +17,7 @@ import "./PostLayout.css";
       <div className="post-container">
         <Link to={`/post/${post.postId}`}>
           <div className="image-container">
-            <img src={post.imgBase64} alt="사진"/> 
+            <img src={post.image} alt="사진"/>
           </div>
           <div className="post-info-container">
 						<div className="dropdown-container">
@@ -32,7 +33,7 @@ import "./PostLayout.css";
             <p>{post.title}</p>
           </div>
         </Link>
-        <Link to="/code" className="ans-Btn">
+        <Link to="/reply?postId=${post.postId}" className="ans-Btn">
           답변
         </Link>
       </div>
