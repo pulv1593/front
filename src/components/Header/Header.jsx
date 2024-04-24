@@ -44,7 +44,7 @@ const Header = () => {
 			  width: "70px",
 			  margin: "10px",
 			  border: "0",
-			background-color: "transparent",
+			backgroundColor: "transparent",
 			}}>
 			<img src={Logo} style={{
 			  height: "50px",
