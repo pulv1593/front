@@ -18,17 +18,14 @@ const Dropdown = ({closeDrop}) => {
 	
 	const kakaoLogout = async () => {
 		const token = localStorage.getItem('access_token');
+		console.log(token);
 		try {
-			if (token) {
-				const res = await axios.get('https://k9bceeba41403a.user-app.krampoline.com/logouts', {}, {
-				  headers: {
-					'Content-Type': 'application/json',
-					withCredentials: true,
-					Authorization: `Bearer ${token}`
-				  }
-				});
+			const res = await axios.get('https://k9bceeba41403a.user-app.krampoline.com/logouts', {}, {
+			  headers: {
+				Authorization: `Bearer ${token}`
+			  }
+			});
 			console.log('로그아웃 성공: ', res);
-			};
 			localStorage.clear();
 			navigate('/');
 			alert('로그아웃 되었습니다.');
@@ -39,8 +36,8 @@ const Dropdown = ({closeDrop}) => {
 	}
 	
 	const logoutClicked = () => {
-		dropdownClicked();
 		kakaoLogout();
+		dropdownClicked();
 	};
 	
 	
