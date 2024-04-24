@@ -2,12 +2,12 @@ import { useState, useEffect, useCallback } from 'react'
 import { javascript } from "@codemirror/lang-javascript";
 import { html } from "@codemirror/lang-html";
 import { css } from "@codemirror/lang-css";
-import Result from './Result';
+import Result from '../Result';
 import CodeMirror from "@uiw/react-codemirror";
-import './styles/Editor.css';
+import '../styles/Editor.css';
 import axios from "axios";
 
-function Editor({onSave, postId}) {
+function MyEditor({onSaveMycode}) {
   const [html_edit, setHtml_Edit] = useState('');
   const [css_edit, setCss_Edit] = useState('');
   const [js_edit, setJs_Edit] = useState('');
@@ -39,36 +39,31 @@ function Editor({onSave, postId}) {
 
   console.log(srcCode);
 	
-// 	기능2: 작성된 코드를 txt 형식으로 백엔드 서버에 보내주기
-	const saveCodeToBackend = async () => {
-		const html = JSON.stringify(html_edit);
-		const css = JSON.stringify(css_edit);
-		const js = JSON.stringify(js_edit);
-		try {
-			const access_token = localStorage.getItem('access_token');
-			const postIdValue = postId;
-			const formData = new FormData();
-			formData.append('postId', postIdValue);
-			formData.append('html', html);
-			formData.append('css', css);
-			formData.append('js', js);
-
-			const response = await axios.post(`${redirect_uri}/reply`, formData, {
-				headers: {
-					'Content-Type': 'multipart/form-data',
-					'Authorization': `Bearer ${access_token}`,
-				}
-			});
-			console.log('Save response:', response.data);
-		} catch (error) {
-			console.error('Error saving code:', error);
-		}
-	};
-
+// 	기능3. 나만의 ide 코드 저장 기능
 	useEffect(() => {
-		// 저장 버튼 클릭 시 코드를 백엔드에 저장
-		onSave(saveCodeToBackend);
-	}, [onSave]);
+		const saveMyCode = async() => {
+			const html = JSON.stringify(html_edit);
+			const css = JSON.stringify(css_edit);
+			const js = JSON.stringify(js_edit);
+			try{
+				const access_token = localStorage.getItem('access_token');
+				const formData = new FormData();
+				formData.append('html', html);
+				formData.append('css', css);
+				formData.append('js', js);
+				const response = await axios.post(`${redirect_uri}/code`, formData, {
+					headers: {
+						'Content-Type': 'multipart/form-data',
+						'Authorization': `Bearer ${access_token}`,
+					}
+				});
+				console.log('Save response:', response.data);
+			} catch (error) {
+				console.error('Error saving code:', error);
+			}
+		}
+		onSaveMycode(saveMyCode);
+	}, [onSaveMycode]);
 
 // 	화면에 보여지는 코드 편집기 부분
   return (
@@ -115,4 +110,4 @@ function Editor({onSave, postId}) {
   )
 }
 
-export default Editor;
+export default MyEditor;

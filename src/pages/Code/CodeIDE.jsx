@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, useEffect } from "react-router-dom";
 import Editor from "../../components/CodeEditor/Editor";
 
 // component
@@ -32,7 +32,7 @@ const CodeIDE = () => {
           <button onClick={handleCodeSave} style={{width:"100px", height:"40px", margin:"10px 10px", fontSize:"20px"}}> 저장 </button>
         </div>
       </div>
-      <Editor onSave={handleCodeSave} />
+      <Editor onSave={handleCodeSave} postId={postId} />
     </div>
   );
 }

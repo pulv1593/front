@@ -1,4 +1,4 @@
-import Editor from "../../components/CodeEditor/Editor";
+import MyEditor from "../../components/CodeEditor/MyEditor/MyEditor";
 
 const MyCodeIDE = () => {
 	
@@ -14,7 +14,7 @@ const MyCodeIDE = () => {
           <button onClick={handleCodeSave} style={{width:"100px", height:"40px", margin:"10px 10px", fontSize:"20px"}}> 저장 </button>
         </div>
       </div>
-      <Editor onSaveMycode={handleCodeSave} />
+      <MyEditor onSaveMycode={handleCodeSave} />
     </div>
   );
 }
