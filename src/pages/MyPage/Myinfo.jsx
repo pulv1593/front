@@ -16,11 +16,11 @@ const Myinfo = () => {
 	
 	useEffect(() => {
 		const token = localStorage.getItem('access_token');
-		
+		console.log(token);
 		const userInfo = async () => {
 			try {
 				const res = await axios.get('https://k9bceeba41403a.user-app.krampoline.com/mypage/member', {
-					handers: {
+					headers: {
 						Authorization: `Bearer ${token}`
 					}
 				});
