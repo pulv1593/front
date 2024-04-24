@@ -3,12 +3,12 @@ import { useState, useEffect, useCallback } from 'react'
 import { javascript } from "@codemirror/lang-javascript";
 import { html } from "@codemirror/lang-html";
 import { css } from "@codemirror/lang-css";
-import Result from './Result';
+import Result from '../Result';
 import CodeMirror from "@uiw/react-codemirror";
-import './styles/Editor.css';
+import '../styles/Editor.css';
 import axios from "axios";
 
-function Editor({postId}) {
+function PreEditor({postId, code}) {
 	const navigate = useNavigate();
 	const [html_edit, setHtml_Edit] = useState('');
 	const [css_edit, setCss_Edit] = useState('');
@@ -16,7 +16,25 @@ function Editor({postId}) {
 	const [srcCode, setSrcCode] = useState('');
 	const redirect_uri = import.meta.env.VITE_BACK_REDIRECT_URI;
 	const postIdNum = postId;
+	
+	useEffect(() => {
+    // code 값이 변화할 때 초기 값을 설정하고, srcCode를 업데이트합니다.
+    const htmlContent = code.html ? JSON.parse(code.html) : '';
+    const cssContent = code.css ? JSON.parse(code.css) : '';
+    const jsContent = code.js ? JSON.parse(code.js) : '';
 
+    setHtml_Edit(htmlContent);
+    setCss_Edit(cssContent);
+    setJs_Edit(jsContent);
+
+    const initialSrcCode = `
+			<body>${htmlContent}</body>
+			<style>${cssContent}</style>
+			<script>${jsContent}</script>
+		`;
+    setSrcCode(initialSrcCode);
+	}, [code]);
+	
 	const onChangeHtml = useCallback((value) => {
 		setHtml_Edit(value);
 	}, []);
@@ -38,7 +56,7 @@ function Editor({postId}) {
 		setSrcCode(srcCodeUpdated);
 	}, [html_edit, css_edit, js_edit]);
 
-	const saveCodeToBackend = async () => {
+	const choiceCode = async () => {
 		const html = JSON.stringify(html_edit);
 		const css = JSON.stringify(css_edit);
 		const js = JSON.stringify(js_edit);
@@ -55,7 +73,7 @@ function Editor({postId}) {
 			const response = await axios.post(`${redirect_uri}/reply`, code, {
 				headers: {
 					'Content-Type': 'application/json',
-					Authorization: `Bearer ${access_token}`,
+					'Authorization': `Bearer ${access_token}`,
 				}
 			});
 			console.log('Save response:', response.data);
@@ -64,10 +82,11 @@ function Editor({postId}) {
 			console.error('Error saving code:', error);
 		}
 	};
+	
 // 	화면에 보여지는 코드 편집기 부분
   return (
     <div>
-	<button onClick={saveCodeToBackend} style={{width:"100px", height:"40px", margin:"10px 10px", fontSize:"20px"}}> 저장 </button>
+			<button onClick={choiceCode} style={{width:"100px", height:"40px", margin:"10px 10px", fontSize:"20px"}}> 채택 </button>
       <div className="editor-container">
         <div className="editor-grid">
           <div className="editor">
@@ -110,4 +129,4 @@ function Editor({postId}) {
   )
 }
 
-export default Editor;
+export default PreEditor;

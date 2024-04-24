@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import Arrow from '../../assets/right-arrow.png'
 import './Home.css'
 
 const Home = () => {
@@ -39,12 +38,7 @@ const Home = () => {
 				  fontSize: "40px",
 				  border: "0",
 				  backgroundColor: "transparent",
-			  }}>START        
-				<img src={Arrow} style={{
-				  width: "5%",
-				  height: "5%",
-				  paddingLeft: "20px"
-				}}/>
+			  }}>START
 			  </button>
 		  )}
 		  {token && (
@@ -58,11 +52,6 @@ const Home = () => {
 					  border: "0",
 					  backgroundColor: "transparent",
 				  }}>START
-					<img src={Arrow} style={{
-					  width: "5%",
-					  height: "5%",
-					  paddingLeft: "20px"
-					}}/>
 				  </button>
 				  <button 
 					className="Go_IDE" 
@@ -73,11 +62,6 @@ const Home = () => {
 					  border: "0",
 					  backgroundColor: "transparent",
 				  }}>Go to IDE
-					<img src={Arrow} style={{
-					  width: "5%",
-					  height: "5%",
-					  paddingLeft: "20px"
-					}}/>
 				  </button>
 				</div>
 		  )}

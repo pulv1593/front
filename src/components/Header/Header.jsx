@@ -14,6 +14,7 @@ const Header = () => {
 	
 // 	로컬에서 token 가져옴
 	const token = localStorage.getItem('access_token');
+	const my_member_id = localStorage.getItem('member_id');
 	const profile = localStorage.getItem('profile');
 
   const dropdownClicked = () => {
@@ -25,7 +26,7 @@ const Header = () => {
   };
 
   const linkMail = () => {
-    navigate('/chat/start');
+    window.location.href = `https://k9bceeba41403a.user-app.krampoline.com/chat/${my_member_id}`;
   };
 
   return (
@@ -43,17 +44,17 @@ const Header = () => {
 			  width: "70px",
 			  margin: "10px",
 			  border: "0",
-			  backgroundColor: "transparent",
+			backgroundColor: "transparent",
 			}}>
 			<img src={Logo} style={{
-			  height: "100%",
-			  width: "100%",
+			  height: "50px",
+			  width: "50px",
 			}}/>
 		 </button>
 		  {token && (
 		  	<div className="button" 
 				style={{
-				  height: "100%",
+				  height: "70px",
 				  padding: "20px",
 				  display: "flex",
 				  justifyContent: "space-between",
@@ -65,22 +66,10 @@ const Header = () => {
 					height: "50px",
 					margin: "5px",
 					border: "0",
-					borderRadius: "50%",
-					backgroundColor: "#ffffff",
 				  }}>
 				  <img src={Mail} style={{
 					width: "30px",
 				  }}/>
-				  {/* 알람 개수 받아오기 */}
-				  <span className="noticeCount" style={{
-					position: "absolute",
-					top: "5px",
-					right: "75px",
-					padding: "5px 10px",
-					borderRadius: "50%",
-					background: "red",
-					color: "white",
-				  }}>2</span>
 				</button>
 				<div className="dropdown" 
 				  ref={dropDownRef}
@@ -96,11 +85,11 @@ const Header = () => {
 					  height: "50px",
 					  margin: "5px",
 					  border: "0",
-					  borderRadius: "50%",
-					  backgroundColor: "#ffffff",
 					}} >
 					<img src={profile} style={{
-					  width: "30px",
+					  width: "50px",
+					  borderRadius: "50%",
+					  backgroundColor: "#ffffff",
 					}}/>
 				  </button>
 				  {isOpen && (

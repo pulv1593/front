@@ -23,7 +23,7 @@ function CodeQuestion () {
   };
 
 // 	이미지 유형 확인 및 이미지 업로드 기능
-	const allowedExtensions = ['jpg', 'jpeg', 'png'];
+	const allowedExtensions = ['png'];
 
 	const isImageFile = (filename) => {
     const ext = filename.split('.').pop().toLowerCase();
@@ -37,7 +37,7 @@ function CodeQuestion () {
 			const isValidExtension = isImageFile(filename);
         
 			if (!isValidExtension) {
-				alert('이미지 파일만 업로드할 수 있습니다.');
+				alert('png만 업로드할 수 있습니다.');
 				return;
 			}  
 			setImage(file);
