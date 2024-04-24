@@ -88,6 +88,8 @@ function Editor({onSave, onSaveMycode, postId}) {
 					}
 				});
 				console.log('Save response:', response.data);
+			} catch (error) {
+				console.error('Error saving code:', error);
 			}
 		}
 		onSaveMycode(saveMyCode);
