@@ -4,7 +4,8 @@ import { html } from "@codemirror/lang-html";
 import { css } from "@codemirror/lang-css";
 import Result from './Result';
 import CodeMirror from "@uiw/react-codemirror";
-import './styles/Editor.css'; // Import the CSS file
+import './styles/Editor.css';
+import axios from "axios";
 
 function Editor({onSave, onSaveMycode, postId}) {
   const [html_edit, setHtml_Edit] = useState('');
