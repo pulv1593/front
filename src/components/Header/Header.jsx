@@ -44,17 +44,17 @@ const Header = () => {
 			  width: "70px",
 			  margin: "10px",
 			  border: "0",
-			  backgroundColor: "transparent",
+			background-color: "transparent",
 			}}>
 			<img src={Logo} style={{
-			  height: "100%",
-			  width: "100%",
+			  height: "50px",
+			  width: "50px",
 			}}/>
 		 </button>
 		  {token && (
 		  	<div className="button" 
 				style={{
-				  height: "100%",
+				  height: "70px",
 				  padding: "20px",
 				  display: "flex",
 				  justifyContent: "space-between",
@@ -66,8 +66,6 @@ const Header = () => {
 					height: "50px",
 					margin: "5px",
 					border: "0",
-					borderRadius: "50%",
-					backgroundColor: "#ffffff",
 				  }}>
 				  <img src={Mail} style={{
 					width: "30px",
@@ -75,8 +73,8 @@ const Header = () => {
 				  {/* 알람 개수 받아오기 */}
 				  <span className="noticeCount" style={{
 					position: "absolute",
-					top: "5px",
-					right: "75px",
+					top: "4px",
+					right: "80px",
 					padding: "5px 10px",
 					borderRadius: "50%",
 					background: "red",
@@ -97,11 +95,11 @@ const Header = () => {
 					  height: "50px",
 					  margin: "5px",
 					  border: "0",
-					  borderRadius: "50%",
-					  backgroundColor: "#ffffff",
 					}} >
 					<img src={profile} style={{
-					  width: "30px",
+					  width: "50px",
+					  borderRadius: "50%",
+					  backgroundColor: "#ffffff",
 					}}/>
 				  </button>
 				  {isOpen && (
