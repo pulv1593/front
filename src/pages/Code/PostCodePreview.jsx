@@ -1,14 +1,13 @@
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import Editor from '../../components/CodeEditor/PreEditor/PreEditor';
+import PreEditor from '../../components/CodeEditor/PreEditor/PreEditor';
 
 const PostCodePreview = () => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const replyId = searchParams.get('replyId');
   const replyIdNum = parseInt(replyId, 10);
-  const navigate = useNavigate();
   const [code, setCode] = useState([]);
 	const redirect_uri = import.meta.env.VITE_BACK_REDIRECT_URI;
 
