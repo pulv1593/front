@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from 'react-router-dom';
-// import posts from '../../components/postData/postData';
+import { useState } from 'react';
 
 function PostDetailReq() {
   const { postId } = useParams();
