@@ -1,5 +1,5 @@
 import { Link, useState } from "react-router-dom";
-import "./PostLayout.css";
+import "./MyPostLayout.css";
 
   const PostLayout = ({post}) => {
 		const [isDropdownOpen, setIsDropdownOpen] = useState(false);
