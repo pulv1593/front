@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect, useCallback } from 'react'
 import { javascript } from "@codemirror/lang-javascript";
 import { html } from "@codemirror/lang-html";
@@ -8,6 +9,7 @@ import './styles/Editor.css';
 import axios from "axios";
 
 function Editor({onSave, postId}) {
+	const navigate = useNavigate();
   const [html_edit, setHtml_Edit] = useState('');
   const [css_edit, setCss_Edit] = useState('');
   const [js_edit, setJs_Edit] = useState('');
@@ -45,7 +47,9 @@ function Editor({onSave, postId}) {
 		const html = JSON.stringify(html_edit);
 		const css = JSON.stringify(css_edit);
 		const js = JSON.stringify(js_edit);
+		const memberId = localStorage.getItem('member_id');
 		const code = {
+			memberId : memberId,
 			postId : postIdNum,
 			html: html,
 			css: css,
@@ -60,6 +64,7 @@ function Editor({onSave, postId}) {
 				}
 			});
 			console.log('Save response:', response.data);
+			navigate('/post/list/0');
 		} catch (error) {
 			console.error('Error saving code:', error);
 		}
