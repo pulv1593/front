@@ -9,7 +9,7 @@ import Logout from '../../assets/power-off.png'
 
 const Dropdown = ({closeDrop}) => {
 	const navigate = useNavigate();
-	const back_logout = 'https://k9bceeba41403a.user-app.krampoline.com/logouts';
+	// const back_logout = 'https://k9bceeba41403a.user-app.krampoline.com/logouts';
 	
   const dropdownClicked = () => {
     const close = closeDrop;
@@ -20,15 +20,16 @@ const Dropdown = ({closeDrop}) => {
 		const token = localStorage.getItem('access_token');
 		try {
 			if (token) {
-				const res = await axios.get(`${back_logout}`, null, {
+				const res = await axios.get('https://k9bceeba41403a.user-app.krampoline.com/logouts', {}, {
 				  headers: {
-					 'Content-Type': 'application/json',
+					'Content-Type': 'application/json',
+					withCredentials: true,
 					Authorization: `Bearer ${token}`
 				  }
 				});
 			console.log('로그아웃 성공: ', res);
 			};
-			localStorage.removeItem(token);
+			localStorage.clear();
 			navigate('/');
 			alert('로그아웃 되었습니다.');
 		} 
