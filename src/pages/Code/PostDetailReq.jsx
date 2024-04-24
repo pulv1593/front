@@ -8,11 +8,6 @@ function PostDetailReq() {
   const [post, setPost] = useState(null);
 	const redirect_uri = import.meta.env.VITE_BACK_REDIRECT_URI;
 
-  // id에 해당하는 post가 존재하지 않을 경우.
-  if (!post) {
-      return <div>Post not found</div>;
-  }
-
   // const handleAnswer = () => {
   //   navigate(`/post/preview?codeId=${codeId}`);
   // };
@@ -21,7 +16,7 @@ function PostDetailReq() {
 		const fetchposts = async () => {
 			try {
 				const access_token = localStorage.getItem('access_token');
-				const response = await axios.get(`${redirect_uri}/post/${postId}`, {
+				const response = await axios.get(`${redirect_uri}/post/${postIdNum}`, {
 						headers: {
 							Authorization: `Bearer ${access_token}`,
 						}
