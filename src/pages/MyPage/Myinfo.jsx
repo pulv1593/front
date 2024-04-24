@@ -6,7 +6,7 @@ import axios from 'axios';
 const Myinfo = () => {
 	const navigate = useNavigate();
 // 	이 부분 경로 수정되고 동작 확인해보기
-	const back_user = 'https://k9bceeba41403a.user-app.krampoline.com/user';
+	const back_user = 'https://k9bceeba41403a.user-app.krampoline.com/mypage/member';
 	
 	const [userInfo, setUserInfo] = useState({
 		name: '',
@@ -18,7 +18,7 @@ const Myinfo = () => {
 		
 		const userInfo = async () => {
 			try {
-				const res = await axios.get('백엔드 API', null, {
+				const res = await axios.get(`${back_user}`, {
 					handers: {
 						Authorization: `Bearer ${token}`
 					}
