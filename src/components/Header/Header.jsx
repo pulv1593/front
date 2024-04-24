@@ -26,7 +26,7 @@ const Header = () => {
   };
 
   const linkMail = () => {
-    window.location.href = `https://k9bceeba41403a.user-app.krampoline.com/${my_member_id}`;
+    window.location.href = `https://k9bceeba41403a.user-app.krampoline.com/chat/${my_member_id}`;
   };
 
   return (
