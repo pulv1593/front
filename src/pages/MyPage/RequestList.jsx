@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import MyPostLayout from "../../components/PostLayout/MyPost/MyPostLayout";
 import axios from "axios";
@@ -38,7 +39,7 @@ const RequestList = () => {
 					textDecoration: "none",
 				}}> 질문하기 </Link>
 			</div>
-			<MyPostLayout post={posts} />
+			<MyPostLayout posts={posts} />
 		</div>
 	)
 };
