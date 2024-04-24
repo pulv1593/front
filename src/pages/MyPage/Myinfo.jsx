@@ -60,7 +60,7 @@ const Myinfo = () => {
 		  }}>프로필</p>
 		</div>
 		  	<div style={{
-				  padding: "10%"",
+				  padding: "10%",
 				  display: "flex", 
 				  alignItems: "center",
 			}}>
