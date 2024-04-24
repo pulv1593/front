@@ -27,13 +27,13 @@ function PreEditor({postId, code}) {
     setCss_Edit(cssContent);
     setJs_Edit(jsContent);
 
-    const initialSrcCode = 
-        <body>${htmlContent}</body>
-        <style>${cssContent}</style>
-        <script>${jsContent}</script>
-    ;
+    const initialSrcCode = `
+			<body>${htmlContent}</body>
+			<style>${cssContent}</style>
+			<script>${jsContent}</script>
+		`;
     setSrcCode(initialSrcCode);
-}, [code]);
+	}, [code]);
 	
 	const onChangeHtml = useCallback((value) => {
 		setHtml_Edit(value);
