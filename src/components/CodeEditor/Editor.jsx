@@ -71,7 +71,7 @@ function Editor({onSave, onSaveMycode, postId}) {
 	
 // 	기능3. 나만의 ide 코드 저장 기능
 	useEffect(() => {
-		const saveMyCode = () => {
+		const saveMyCode = async() => {
 			const html = JSON.stringify(html_edit);
 			const css = JSON.stringify(css_edit);
 			const js = JSON.stringify(js_edit);
