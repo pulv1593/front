@@ -1,7 +1,7 @@
 import { Link, useState } from "react-router-dom";
 import "./MyPostLayout.css";
 
-  const PostLayout = ({post}) => {
+  const MyPostLayout = ({post}) => {
 		const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 		
     if (!post || post.length === 0) {
@@ -36,4 +36,4 @@ import "./MyPostLayout.css";
     );
   };
   
-export default PostLayout;
+export default MyPostLayout;
