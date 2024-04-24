@@ -1,4 +1,4 @@
-import { useNavigate, useParams, useEffect } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Editor from "../../components/CodeEditor/Editor";
 
 // component
