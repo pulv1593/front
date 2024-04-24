@@ -38,10 +38,10 @@ function App () {
 		  <Route path="/user" element={<Login />} />
 			<Route path="/login/oauth2/callback/kakao" element={<LoginHandler />} />
 		  <Route path='/post/list/:currentPage' element={<BoardMain defaultCurrentPage={defaultCurrentPage} />} />
+			<Route path="/post/ask" element={<RequestCode />} />
+			<Route path="/post/:postId" element={<PostDetailReq />}/>
 		  <Route path="/post/preview/:codeId" element={<PostCodePreview />}/>
-		  <Route path="/post/:postId" element={<PostDetailReq />}/>
-		  <Route path="/post/ask" element={<RequestCode />} />
-		  <Route path="/code" element={<CodeIDE />} />
+		  <Route path="/reply/:postId" element={<CodeIDE />} />
 		  <Route path="/chat/start" element={<Chat /> } />
 		  <Route path="/mypage/member" element={<Myinfo />} />
 		  <Route path="/mypage/list" element={<RequestList />} />

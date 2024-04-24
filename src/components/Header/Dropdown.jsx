@@ -20,9 +20,9 @@ const Dropdown = ({closeDrop}) => {
 		const token = localStorage.getItem('access_token');
 		console.log(token);
 		try {
-			const res = await axios.get('https://k9bceeba41403a.user-app.krampoline.com/logouts', {}, {
+			const res = await axios.get('https://k9bceeba41403a.user-app.krampoline.com/logouts', {
 			  headers: {
-				Authorization: `Bearer ${token}`
+					Authorization: `Bearer ${token}`
 			  }
 			});
 			console.log('로그아웃 성공: ', res);
