@@ -8,7 +8,7 @@ import CodeMirror from "@uiw/react-codemirror";
 import './styles/Editor.css';
 import axios from "axios";
 
-function Editor({onSave, postId}) {
+function Editor({postId}) {
 	const navigate = useNavigate();
   const [html_edit, setHtml_Edit] = useState('');
   const [css_edit, setCss_Edit] = useState('');
@@ -72,12 +72,16 @@ function Editor({onSave, postId}) {
 
 	useEffect(() => {
 		// 저장 버튼 클릭 시 코드를 백엔드에 저장
-		onSave(saveCodeToBackend);
-	}, [onSave]);
+		saveCodeToBackend();
+	}, [handleCodeSave]);
 
+	const handleCodeSave = () => {
+		console.log('답변 저장 중...')
+	};
 // 	화면에 보여지는 코드 편집기 부분
   return (
     <div>
+    	<button onClick={handleCodeSave} style={{width:"100px", height:"40px", margin:"10px 10px", fontSize:"20px"}}> 저장 </button>
       <div className="editor-container">
         <div className="editor-grid">
           <div className="editor">

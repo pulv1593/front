@@ -43,8 +43,7 @@ const CodeIDE = () => {
   const openImageInNewTab = () => {
     window.open(post.image, '_blank');
   };
-	
-  const handleCodeSave = () => {
+	const handleCodeSave = () => {
 		console.log('답변 저장 중...')
 	};
 
@@ -55,10 +54,9 @@ const CodeIDE = () => {
         <h1>{post.title}</h1>
         <div style={{alignItems:"center"}}>
           <button onClick={openImageInNewTab} style={{width:"110px", height:"40px", margin:"10px 10px", fontSize:"20px"}}>이미지 확대</button>
-          <button onClick={handleCodeSave} style={{width:"100px", height:"40px", margin:"10px 10px", fontSize:"20px"}}> 저장 </button>
         </div>
       </div>
-      <Editor onSave={handleCodeSave} postId={postIdNum} />
+      <Editor postId={postIdNum} />
     </div>
   );
 }
