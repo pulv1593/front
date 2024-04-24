@@ -13,6 +13,10 @@ const Home = () => {
 		navigate("/post/list/0");
 	};
 	
+	const linkIDE = () => {
+		navigate("/code");
+	};
+	
 	const token = localStorage.getItem("access_token");
 	console.log("home");
 
@@ -45,14 +49,29 @@ const Home = () => {
 		  )}
 		  {token && (
 			  <button 
-				className="Login_Btn" 
-				onClick={linkLoginSuc} 
+				className="Start_Btn" 
+				onClick={linkLoginSuc}
 				style={{
 				  width: "100%",
 				  fontSize: "40px",
 				  border: "0",
 				  backgroundColor: "transparent",
-			  }}>START        
+			  }}>START
+				<img src={Arrow} style={{
+				  width: "5%",
+				  height: "5%",
+				  paddingLeft: "20px"
+				}}/>
+			  </button>
+			  <button 
+				className="Go_IDE" 
+				onClick={linkIDE}
+				style={{
+				  width: "100%",
+				  fontSize: "40px",
+				  border: "0",
+				  backgroundColor: "transparent",
+			  }}>Go to IDE
 				<img src={Arrow} style={{
 				  width: "5%",
 				  height: "5%",
