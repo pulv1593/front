@@ -20,6 +20,7 @@ const LoginHandeler = () => {
 			});
 			localStorage.setItem("access_token", res.data.access_token);
 			localStorage.setItem("member_id", res.data.member_id);
+			localStorage.setItem("profile", res.data.user_image_url);
 			console.log(res);
 			console.log("성공" + code);
 			
