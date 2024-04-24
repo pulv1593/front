@@ -20,7 +20,7 @@ const Footer = () => {
       <a href='https://github.com/rollet-avengers' target='_blank'>
         <img src={Github} style={{
           width: "30px",
-          marRight: "20px",
+          margeRight: "20px",
         }}/>
       </a>
     </div>
