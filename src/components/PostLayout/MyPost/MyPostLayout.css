@@ -1,10 +1,16 @@
+.postlist-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
 .post-container {
   display: flex;
   flex-direction: column;
   width: 270px;
   height: 300px;
   background-color: #d5d5d5;
-  padding: 10px;
+  padding: 10px; 
+  margin: 10px;
 }
 
 .image-container {
@@ -14,28 +20,50 @@
 }
 
 .image-container img {
-  width: 100%;
+  width: 100%; 
   height: 200px;
 }
 
 .post-info-container {
-  margin-top: 10px;
-  margin-bottom: 5px;
-  width: 100%;
-  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
 }
 
-.post-info-container p {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  text-decoration: none;
-  color: black;
+.dropdown-container {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
 }
 
 .dropdown-toggle {
-	border: none;
+  width: 50%;
+  border: none;
   background: none;
-  cursor: pointer;
-	text-decoration: none;
-	color: black;
+  font-size: large;
+  text-align: left;
+  padding-left: 5px;
+}
+
+.dropdown-menu {
+  width: 50%;
+  background-color: white;
+}
+
+.dropdown-menu a {
+  font-size: large;
+  color: black;
+}
+
+.post-title {
+  display: flex;
+  flex-direction: row;
+  padding-left: 10px;
+  margin: 5px 0;
+}
+
+.post-title p {
+  margin: 0;
+  color: black;
+  font-size: larger;
 }
