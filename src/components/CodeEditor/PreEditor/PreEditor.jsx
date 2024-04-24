@@ -60,7 +60,6 @@ function PreEditor({postId, code}) {
 		const html = JSON.stringify(html_edit);
 		const css = JSON.stringify(css_edit);
 		const js = JSON.stringify(js_edit);
-		const postIdNum = postIdNum;
 		const memberId = localStorage.getItem('member_id');
 		const code = {
 			memberId: memberId,
