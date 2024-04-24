@@ -15,7 +15,7 @@ function PreEditor({postId, code}) {
 	const [js_edit, setJs_Edit] = useState('');
 	const [srcCode, setSrcCode] = useState('');
 	const redirect_uri = import.meta.env.VITE_BACK_REDIRECT_URI;
-	const post_id = postId;
+	const postIdNum = postId;
 	
 	useEffect(() => {
     // code 값이 변화할 때 초기 값을 설정하고, srcCode를 업데이트합니다.
@@ -60,7 +60,7 @@ function PreEditor({postId, code}) {
 		const html = JSON.stringify(html_edit);
 		const css = JSON.stringify(css_edit);
 		const js = JSON.stringify(js_edit);
-		const postIdNum = post_Id;
+		const postIdNum = postIdNum;
 		const memberId = localStorage.getItem('member_id');
 		const code = {
 			memberId: memberId,
