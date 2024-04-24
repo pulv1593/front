@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
 import axios from 'axios';
 import "./PostLayout.css";
 
   const PostLayout = ({post}) => {
+	  const navigate = useNavigate();
 		const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 	  	const back = 'https://k9bceeba41403a.user-app.krampoline.com';
 	  
@@ -19,7 +20,7 @@ import "./PostLayout.css";
 					message: chat_message,
 				});
 				console.log('대화 시작');
-				
+				navigate(`${back}/chat/start?memberId=${post.memberId}`);
 			} catch (error) {
 				alert('대화 요청을 실패하였습니다.');
 			}
@@ -41,14 +42,9 @@ import "./PostLayout.css";
           </div>
           <div className="post-info-container">
 						<div className="dropdown-container">
-							<button onClick={toggleDropdown} className="dropdown-toggle">
+							<button onClick={startChating} className="dropdown-toggle">
 								작성자: {post.name}
 							</button>
-							{isDropdownOpen && (
-								<div className="dropdown-menu">
-									<Link to={`${back}/chat/start?memberId=${post.memberId}`} className="reciver-chat-link">쪽지 보내기</Link>
-								</div>
-							)}
 						</div>
             <p>{post.title}</p>
           </div>
