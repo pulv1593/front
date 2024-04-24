@@ -12,7 +12,7 @@ const CodeLayout = ({ postId, code }) => {
                     <p>답변자: {code.memberName}</p>
                     <p>작성시간: {code.createTime}</p>
                 </div>
-                <Link to={`/post/preview?postId=${post_Id}?replyId=${code.replyId}`} className="preview-Btn">
+                <Link to={`/post/preview?postId=${post_Id}&replyId=${code.replyId}`} className="preview-Btn">
                     미리보기
                 </Link>
             </div>
