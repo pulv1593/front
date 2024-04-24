@@ -11,6 +11,7 @@ const Header = () => {
   const dropDownRef = useRef();
   const [isOpen, setIsOpen] = useDetectClose(dropDownRef, false);
   const navigate = useNavigate();
+	const back = 'https://k9bceeba41403a.user-app.krampoline.com';
 	
 // 	로컬에서 token 가져옴
 	const token = localStorage.getItem('access_token');
@@ -25,7 +26,7 @@ const Header = () => {
   };
 
   const linkMail = () => {
-    navigate('/chat/start');
+    navigate(`${back}/chat/start`);
   };
 
   return (
