@@ -22,13 +22,15 @@ const Dropdown = ({closeDrop}) => {
 			if (token) {
 				const res = await axios.get(`${back_logout}`, null, {
 				  headers: {
+					 'Content-Type': 'application/json',
 					Authorization: `Bearer ${token}`
 				  }
 				});
 			console.log('로그아웃 성공: ', res);
 			};
-			localStorage.clear();
+			localStorage.removeItem(token);
 			navigate('/');
+			alert('로그아웃 되었습니다.');
 		} 
 		catch (error) {
 			console.error('로그아웃 중 오류 발생', error);
