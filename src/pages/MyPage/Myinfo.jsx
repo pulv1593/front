@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"
-import SignOutButton from '../../components/Button/SignOutButton';
 import kakao from '../../assets/KakaoTalk_logo.png';
 import axios from 'axios';
 
 const Myinfo = () => {
 	const navigate = useNavigate();
-// 	이 부분 경로 수정되고 동작 확인해보기
-	// const back_user = 'https://k9bceeba41403a.user-app.krampoline.com/mypage/member';
+	const back_user = 'https://k9bceeba41403a.user-app.krampoline.com/mypage/member';
 	
 	const [userInfo, setUserInfo] = useState({
 		name: '',
@@ -20,7 +18,7 @@ const Myinfo = () => {
 		const profile = localStorage.getItem('profile');
 		const userInfo = async () => {
 			try {
-				const res = await axios.get('https://k9bceeba41403a.user-app.krampoline.com/mypage/member', {
+				const res = await axios.get(`${back_user}`, {
 					headers: {
 						Authorization: `Bearer ${token}`
 					}
