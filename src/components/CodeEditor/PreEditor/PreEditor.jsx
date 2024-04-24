@@ -15,7 +15,21 @@ function PreEditor({code}) {
 	const [js_edit, setJs_Edit] = useState('');
 	const [srcCode, setSrcCode] = useState('');
 	const redirect_uri = import.meta.env.VITE_BACK_REDIRECT_URI;
+	
+	useEffect(() => {
+		// props의 code 값이 변화할 때 초기 값을 설정하고, srcCode를 업데이트합니다.
+		setHtml_Edit(code.html || '');
+		setCss_Edit(code.css || '');
+		setJs_Edit(code.js || '');
 
+		const initialSrcCode = `
+			<body>${code.html || ''}</body>
+			<style>${code.css || ''}</style>
+			<script>${code.js || ''}</script>
+		`;
+		setSrcCode(initialSrcCode);
+	}, [code]);
+	
 	const onChangeHtml = useCallback((value) => {
 		setHtml_Edit(value);
 	}, []);
