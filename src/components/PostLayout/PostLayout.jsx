@@ -52,6 +52,9 @@ import "./PostLayout.css";
         <Link to={`/reply?postId=${post.postId}`} className="ans-Btn">
           답변
         </Link>
+		<button onClick={startChating} className="dropdown-toggle">
+			채팅: {post.name}
+		</button>
       </div>
     );
   };
