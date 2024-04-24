@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import CodeLayout from '../../components/PostLayout/CodeLayout';
 
 // 함수형 컴포넌트 PostDetailReq를 정의합니다.
 function PostDetailReq() {
