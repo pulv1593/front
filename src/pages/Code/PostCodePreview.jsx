@@ -6,6 +6,8 @@ import PreEditor from '../../components/CodeEditor/PreEditor/PreEditor';
 const PostCodePreview = () => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
+	const postId = searchParams.get('postId');
+  const postIdNum = parseInt(postId, 10);
   const replyId = searchParams.get('replyId');
   const replyIdNum = parseInt(replyId, 10);
   const [code, setCode] = useState([]);
@@ -39,7 +41,7 @@ const PostCodePreview = () => {
       <div style={{display:"flex", flexDirection:"row", justifyContent:"space-between"}}>
         <h1>{code.title}</h1>
       </div>
-      <PreEditor code={code}/>
+      <PreEditor postId={postIdNum} code={code}/>
     </div>
   );
 }

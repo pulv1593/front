@@ -8,27 +8,32 @@ import CodeMirror from "@uiw/react-codemirror";
 import '../styles/Editor.css';
 import axios from "axios";
 
-function PreEditor({code}) {
+function PreEditor({postId, code}) {
 	const navigate = useNavigate();
 	const [html_edit, setHtml_Edit] = useState('');
 	const [css_edit, setCss_Edit] = useState('');
 	const [js_edit, setJs_Edit] = useState('');
 	const [srcCode, setSrcCode] = useState('');
 	const redirect_uri = import.meta.env.VITE_BACK_REDIRECT_URI;
+	const post_id = postId;
 	
 	useEffect(() => {
-		// props의 code 값이 변화할 때 초기 값을 설정하고, srcCode를 업데이트합니다.
-		setHtml_Edit(code.html || '');
-		setCss_Edit(code.css || '');
-		setJs_Edit(code.js || '');
+    // code 값이 변화할 때 초기 값을 설정하고, srcCode를 업데이트합니다.
+    const htmlContent = code.html ? JSON.parse(code.html) : '';
+    const cssContent = code.css ? JSON.parse(code.css) : '';
+    const jsContent = code.js ? JSON.parse(code.js) : '';
 
-		const initialSrcCode = `
-			<body>${code.html || ''}</body>
-			<style>${code.css || ''}</style>
-			<script>${code.js || ''}</script>
-		`;
-		setSrcCode(initialSrcCode);
-	}, [code]);
+    setHtml_Edit(htmlContent);
+    setCss_Edit(cssContent);
+    setJs_Edit(jsContent);
+
+    const initialSrcCode = 
+        <body>${htmlContent}</body>
+        <style>${cssContent}</style>
+        <script>${jsContent}</script>
+    ;
+    setSrcCode(initialSrcCode);
+}, [code]);
 	
 	const onChangeHtml = useCallback((value) => {
 		setHtml_Edit(value);
@@ -55,7 +60,7 @@ function PreEditor({code}) {
 		const html = JSON.stringify(html_edit);
 		const css = JSON.stringify(css_edit);
 		const js = JSON.stringify(js_edit);
-		const postIdNum = code.postId;
+		const postIdNum = post_Id;
 		const memberId = localStorage.getItem('member_id');
 		const code = {
 			memberId: memberId,
