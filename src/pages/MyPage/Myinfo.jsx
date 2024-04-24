@@ -71,14 +71,6 @@ const Myinfo = () => {
 		  }}>
 			 <span>{userInfo.name}</span>
 			  님</p>
-		  <p style={{
-			paddingTop: "10px",
-		  }}>자기 소개</p>
-		  <input type="textarea" placeholder="자기소개" style={{
-			width: "90%",
-			height: "50%",
-		  }}/>
-			<button className="edit_btn">저장</button>
 		</div>
 	  </div>
 	  <div style={{
