@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Editor from "../../components/CodeEditor/Editor";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -6,12 +6,14 @@ import axios from "axios";
 // component
 
 const CodeIDE = () => {
-  const { postId } = useParams();
-	console.log("postId:", postId);
-	console.log("type:", typeof(postId));
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const postId = searchParams.get('postId');
+  console.log("postId:", postId);
+  console.log("type:", typeof(postId));
   const postIdNum = parseInt(postId, 10);
-	console.log("postIdNum:", postIdNum);
-	console.log("type:", typeof(postIdNum));
+  console.log("postIdNum:", postIdNum);
+  console.log("type:", typeof(postIdNum));
   const [post, setPost] = useState(null);
 	const redirect_uri = import.meta.env.VITE_BACK_REDIRECT_URI 
 	
