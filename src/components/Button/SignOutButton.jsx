@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import './SignOutButton.css';
 
+// 회원탈퇴 기능은 나중에 
 const SignOutButton = () => {
 // 	경로 확인해보기
 	const back_user = 'https://k9bceeba41403a.user-app.krampoline.com/user';
