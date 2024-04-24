@@ -45,15 +45,16 @@ function MyEditor({onSaveMycode}) {
 			const html = JSON.stringify(html_edit);
 			const css = JSON.stringify(css_edit);
 			const js = JSON.stringify(js_edit);
+			const code = {
+				html: html,
+				css: css,
+				js: js,
+			}
 			try{
 				const access_token = localStorage.getItem('access_token');
-				const formData = new FormData();
-				formData.append('html', html);
-				formData.append('css', css);
-				formData.append('js', js);
-				const response = await axios.post(`${redirect_uri}/code`, formData, {
+				const response = await axios.post(`${redirect_uri}/code`, code, {
 					headers: {
-						'Content-Type': 'multipart/form-data',
+						'Content-Type': 'application/json',
 						'Authorization': `Bearer ${access_token}`,
 					}
 				});
