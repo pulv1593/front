@@ -45,8 +45,8 @@ function App () {
 		  <Route path="/chat/start" element={<Chat /> } />
 		  <Route path="/mypage/member" element={<Myinfo />} />
 		  <Route path="/mypage/list" element={<RequestList />} />
-		  <Route path="/mypage/post" element={<SaveCodeList />} />
-		  <Route path="/mypage/code" element={<AnswerList />} />
+		  <Route path="/mypage/code" element={<SaveCodeList />} />
+		  <Route path="/mypage/post" element={<AnswerList />} />
         </Routes>
         </div>
 

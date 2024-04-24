@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import PostLayout from "../../components/PostLayout/PostLayout";
 import axios from "axios";
-import { useEffect, useState, useParams } from "react";
+import { useEffect, useState } from "react";
 
 const BoardMain = ({ defaultCurrentPage }) => {
 	const [posts, setPosts] = useState([]);
@@ -11,12 +11,12 @@ const BoardMain = ({ defaultCurrentPage }) => {
   const redirect_uri = import.meta.env.VITE_BACK_REDIRECT_URI;
 
   const fetchPosts = async () => {
-		const access_token = localStorage.getItem('access_token');
+	const access_token = localStorage.getItem('access_token');
     try {
       const response = await axios.get(`${redirect_uri}/post/list/${currentPage}`, {
 				headers: {
-        	Authorization: `Bearer ${access_token}`
-      	}
+					Authorization: `Bearer ${access_token}`
+				}
 			});
       const res = response.data;
       setPosts(res.posts);
