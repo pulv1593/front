@@ -11,6 +11,7 @@ import BoardMain from './pages/Code/BoardMain';
 import RequestCode from './pages/Code/RequestCode';
 import Chat from './pages/Chat/Chat';
 import CodeIDE from './pages/Code/CodeIDE';
+import MyCodeIDE from './pages/Code/MyCodeIDE';
 import RequestList from './pages/MyPage/RequestList';
 import AnswerList from './pages/MyPage/AnswerList';
 import SaveCodeList from './pages/MyPage/SaveCodeList';
@@ -41,7 +42,8 @@ function App () {
 			<Route path="/post/ask" element={<RequestCode />} />
 			<Route path="/post/:postId" element={<PostDetailReq />}/>
 		  <Route path="/post/preview/:codeId" element={<PostCodePreview />}/>
-		  <Route path="/reply/:postId" element={<CodeIDE />} />
+		  <Route path="/reply" element={<CodeIDE />} />
+		  <Route path="/code" element={<MyCodeIDE />} />
 		  <Route path="/chat/start" element={<Chat /> } />
 		  <Route path="/mypage/member" element={<Myinfo />} />
 		  <Route path="/mypage/list" element={<RequestList />} />
@@ -49,7 +51,6 @@ function App () {
 		  <Route path="/mypage/post" element={<AnswerList />} />
         </Routes>
         </div>
-
         <Footer />
       </Router>
     </div>
